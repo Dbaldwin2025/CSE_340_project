@@ -74,9 +74,9 @@ footer {
 }
 
 
-@media only screen and (max-width: 740) {
+@media only screen and (max-width: 680) {
  body{
-  width: 100%;
+  width: auto;
   display: block;
  }
 }
