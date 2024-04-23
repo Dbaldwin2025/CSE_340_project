@@ -46,6 +46,8 @@ footer {
   background-color:rgba(rgba(255, 255, 255, 0.51), green, blue, 5);
 }
 #review {
+  height: 350px;
+  width: 350px;
   background-color: white;
   color: black;
 }
