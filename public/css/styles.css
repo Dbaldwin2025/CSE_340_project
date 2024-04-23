@@ -10,6 +10,7 @@ header {
 }
 body {
   background-color: darkolivegreen;
+  background-image: url("small_check.png");
 }
 #b1 {
   background-repeat: repeat;
