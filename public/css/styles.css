@@ -31,7 +31,7 @@ nav a {
 body {
   background-color: darkolivegreen;
   background-image: url("/images/site/small_check.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 100%;
   width: 100%;
 #wrapper {
