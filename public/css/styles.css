@@ -8,6 +8,9 @@
 header {
   background-color: cadetblue;
 }
+nav {
+  background-color: blanchedalmond;
+}
 body {
   background-color: darkolivegreen;
   background-image: url("/images/site/small_check.png");
