@@ -12,8 +12,7 @@ body {
   background-color: darkolivegreen;
 }
 #b1 {
-  height: max-content;
-  width: max-content;
+  background-repeat: repeat;
 }
 footer {
   background-color: blue;
