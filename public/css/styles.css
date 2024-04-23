@@ -28,7 +28,10 @@ footer {
   color: black;
 }
 
-#main_page {
+#main_content {
+  background-color: white;
+}
+#Welcome {
   background-color: white;
 }
 #btn-1 {
@@ -40,7 +43,7 @@ footer {
   height: 125px;
   width: 125PX;
   color: cyan;
-  background-color:rgba(rgba(255, 255, 255, 0.8), green, blue, 5);
+  background-color:rgba(rgba(255, 255, 255, 0.51), green, blue, 5);
 }
 #review {
   background-color: white;
