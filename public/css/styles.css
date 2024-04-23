@@ -8,11 +8,11 @@
 header {
   background-color: white;
   color: black;
+  display: inline;
 }
 header a {
   color: black;
   text-decoration: none;
-  display: inline-block;
 }
 nav {
   background-color: black;
