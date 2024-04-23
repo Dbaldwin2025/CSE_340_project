@@ -13,8 +13,8 @@ nav {
   background-color: black;
   color: white;
 }
-ul {
-  display: inline-block;
+nav ul {
+  display: inline;
   list-style-type: none;
 }
 body {
