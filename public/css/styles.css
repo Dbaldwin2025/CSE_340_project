@@ -8,6 +8,10 @@
 header {
   background-color: white;
   color: black;
+  display: inline-block;
+}
+header a {
+  color: black;
 }
 nav {
   background-color: black;
