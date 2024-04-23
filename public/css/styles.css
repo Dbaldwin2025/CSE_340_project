@@ -13,8 +13,10 @@ nav {
   background-color: black;
   color: white;
 }
+nav li {
+  display: inline-block;
+}
 nav ul {
-  display: inline;
   list-style-type: none;
 }
 body {
