@@ -39,7 +39,6 @@ body {
   padding: 20px;
   border-width: 5px;
   border-color: cyan;
-  border-radius: 5%;
   background-color: white;
 }
 footer {
@@ -65,7 +64,8 @@ footer {
   background-color:rgba(rgba(255, 255, 255, 0.51), green, blue, 5);
 }
 #delorean_image {
-  width: inherit;
+  width: 400px;
+  height: auto;
 }
 #review {
   height: 350px;
