@@ -30,16 +30,16 @@ nav a {
 }
 body {
   background-color: darkolivegreen;
-  background-image: url("/images/site/small_check.png");
+  background-image: url("/images/site/checkerboard.jpg");
   background-repeat: repeat;
   height: 100%;
   width: 100%;
 }
 #wrapper {
   padding: 20px;
-  border: 25px;
+  border-width: 5px;
   border-color: cyan;
-  border-radius: 50%;
+  border-radius: 5%;
   background-color: white;
 }
 footer {
