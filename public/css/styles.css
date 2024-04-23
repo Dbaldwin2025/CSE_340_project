@@ -5,8 +5,11 @@
   box-sizing: border-box;
 }
 
-.background-image {
-  height: 55px;
+header {
+  background-color: cadetblue;
+}
+body {
+  background-color: darkolivegreen;
 }
 footer {
   background-color: blue;
