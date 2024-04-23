@@ -12,9 +12,9 @@ header {
 nav {
   background-color: black;
   color: white;
-  display: inline-block;
 }
 ul {
+  display: inline-block;
   list-style-type: none;
 }
 body {
