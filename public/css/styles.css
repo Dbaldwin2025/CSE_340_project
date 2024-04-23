@@ -6,10 +6,12 @@
 }
 
 header {
-  background-color: cadetblue;
+  background-color: white;
+  color: black;
 }
 nav {
-  background-color: blanchedalmond;
+  background-color: black;
+  color: white;
 }
 body {
   background-color: darkolivegreen;
@@ -18,5 +20,10 @@ body {
 }
 
 footer {
-  background-color: cadetblue;
+  background-color: white;
+  color: black;
+}
+
+#main_page {
+  background-color: white;
 }
