@@ -6,7 +6,8 @@
 }
 
 .background-image {
-  background-repeat: repeat;
+  border-image-repeat: repeat;
+  background-repeat: repeat-x;
 }
 footer {
   background-color: blue;
