@@ -12,6 +12,10 @@ header {
 nav {
   background-color: black;
   color: white;
+  display: inline-block;
+}
+ul {
+  list-style-type: none;
 }
 body {
   background-color: darkolivegreen;
