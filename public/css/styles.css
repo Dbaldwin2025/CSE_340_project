@@ -17,10 +17,12 @@ header {
   font-size: 1.6em;
   grid-column: 1;
   grid-row: 1;
+  white-space: nowrap;
 }
 #tools {
   grid-column: 4;
   grid-row: 1;
+  white-space: nowrap;
 }
 header a {
   color: black;
