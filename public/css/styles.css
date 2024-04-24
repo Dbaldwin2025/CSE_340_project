@@ -11,10 +11,10 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  padding: 8px;
+  padding: 15px;
 }
 .sitename {
-  font-size: 1.8em;
+  font-size: 3em;
   grid-column: 1;
   grid-row: 1;
 }
@@ -29,7 +29,7 @@ header a {
 nav {
   background-color: black;
   color: white;
-  padding: 8px;
+  padding: 5px;
 }
 
 nav ul {
@@ -70,9 +70,10 @@ body {
   width: 100%;
 }
 #wrapper {
-  padding: 20px;
-  border-width: 5px;
-  border-color: cyan;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   background-color: white;
 }
 footer {
