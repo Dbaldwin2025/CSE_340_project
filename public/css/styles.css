@@ -33,6 +33,29 @@ nav li {
 }
 nav ul {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+.one {
+  grid-column: 1;
+  grid-row: 1;
+}
+.two {
+  grid-column: 1;
+  grid-row: 2;
+}
+.three {
+  grid-column: 1;
+  grid-row: 3;
+}
+.four {
+  grid-column: 1;
+  grid-row: 4;
+}
+.five {
+  grid-column: 1;
+  grid-row: 5;
 }
 nav a {
   color: white;
