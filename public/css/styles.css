@@ -84,7 +84,9 @@ footer {
   color: black;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 5px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .copyright {
   grid-column: 1;
