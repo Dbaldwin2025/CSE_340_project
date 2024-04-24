@@ -10,7 +10,7 @@ header {
   color: black;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  justify-items: left;
   padding: 15px;
 }
 .siteName {
