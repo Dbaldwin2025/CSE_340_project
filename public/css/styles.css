@@ -10,6 +10,7 @@ header {
   color: black;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
 }
 .sitename {
   grid-column: 1;
