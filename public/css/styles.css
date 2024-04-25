@@ -66,6 +66,9 @@ nav a {
   color: white;
   text-decoration: none;
 }
+a {
+  white-space: nowrap;
+}
 body {
   background-color: white;
   background-image: url("/images/site/checkerboard.jpg");
@@ -125,21 +128,25 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.flux {
+.upgrade_title {
   grid-column: 1;
   grid-row: 1;
+}
+.flux {
+  grid-column: 1;
+  grid-row: 2;
 }
 .flame {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 2;
 }
 .bumper {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 3;
 }
 .hub {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 3;
 }
 
 
