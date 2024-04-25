@@ -133,12 +133,16 @@ body {
   width: 400px;
   background-color: white;
   color: black;
+  grid-column: 1/2;
+  grid-row: 3;
 }
 
 /*******upgrades*******/
 .upgrades {
   height: 400px;
   width: 400px;
+  grid-column: 3/4;
+  grid-row: 3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: end;
