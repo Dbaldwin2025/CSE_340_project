@@ -79,6 +79,7 @@ footer {
   grid-template-columns: 100px auto 100px;
 }
 .copyright {
+  white-space: nowrap;
   grid-column: 1;
   grid-row: 1;
 }
