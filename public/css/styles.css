@@ -181,7 +181,7 @@ a {
 
 /******media query******/
 @media only screen and (min-width: 680) {
- body{
+ 
   .main_content { 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -208,5 +208,5 @@ a {
     grid-column: 3/4;
     grid-row: 3;
   }
- }
+
 }
