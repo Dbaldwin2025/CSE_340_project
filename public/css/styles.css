@@ -4,25 +4,25 @@
 *:after {
   box-sizing: border-box;
 }
-
 header {
   background-color: white;
   color: black;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: left;
   padding: 15px;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
 }
 .siteName {
   font-size: 1.6em;
-  grid-column: 1;
+  grid-column: 1/2;
   grid-row: 1;
   white-space: nowrap;
+  justify-items: left;
 }
 #tools {
-  grid-column: 4;
+  grid-column: 3/4;
   grid-row: 1;
   white-space: nowrap;
+  justify-items: right;
 }
 header a {
   color: black;
