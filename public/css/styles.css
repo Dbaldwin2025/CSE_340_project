@@ -177,6 +177,6 @@ a {
 @media only screen and (max-width: 780) {
  body{
   width: auto;
-  display: inline-block;
+  display: block;
  }
 }
