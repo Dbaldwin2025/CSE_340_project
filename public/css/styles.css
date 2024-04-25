@@ -99,12 +99,12 @@ body {
   margin-left: 20px;
   margin-right: 20px;
 }
-#main_content {
+.main_content {
   background-color: white;  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-#Welcome {
+.Welcome {
   white-space: nowrap;;
   grid-column: 1/2;
   grid-row: 1;
@@ -113,7 +113,7 @@ body {
  background-color: cyan;
  color: black;
 }
-#DMC {
+.DMC {
   height: 125px;
   width: 125PX;
   color: cyan;
@@ -121,14 +121,14 @@ body {
   grid-column: 1;
   grid-row: 2;
 }
-#delorean_image {
+.delorean_image {
   z-index: -1;
   grid-column: 1/4;
   grid-row: 2;
 }
 
 /*******review*******/
-#review {
+.review {
   height: 400px;
   width: 400px;
   background-color: white;
