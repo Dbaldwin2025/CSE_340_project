@@ -187,8 +187,6 @@ a {
   .review {
     height: auto;
     max-width: 450px;
-    background-color: white;
-    color: black;
     grid-column: 1/2;
     grid-row: 3;
   }
