@@ -151,7 +151,7 @@ body {
   width: 400px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+  align-items: end;
 }
 .upgrade_title {
   grid-column: 1;
