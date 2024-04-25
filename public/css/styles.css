@@ -180,7 +180,7 @@ a {
 }
 
 /******media query******/
-@media only screen and (min-width: 680) {
+@media only screen and (min-width: 680px) {
  
   .main_content { 
     display: grid;
@@ -195,6 +195,7 @@ a {
   
   /*******review*******/
   .review {
+    background-color: brown;
     height: auto;
     max-width: 450px;
     grid-column: 1/2;
