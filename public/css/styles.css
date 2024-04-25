@@ -181,8 +181,8 @@ a {
 }
 
 
-@media only screen and (max-width: 780) {
+@media only screen and (min-width: 580) {
  body{
-  width: auto;
+  grid-template-areas: "Welcome" "delorean_image" "review upgrades";
  }
 }
