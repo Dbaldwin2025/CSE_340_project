@@ -119,18 +119,12 @@ footer {
   width: 125PX;
   color: cyan;
   background-color:rgba(rgba(255, 255, 255, 0.51), green, blue, 5);
-  position: absolute;
-  left: 0px;
-  top: 0px;
   grid-column: 1;
   grid-row: 2;
 }
 #delorean_image {
   width: 100%;
   height: auto;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   z-index: -1;
   grid-column: 1/4;
   grid-row: 2;
