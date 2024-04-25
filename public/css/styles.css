@@ -179,7 +179,7 @@ a {
   white-space: nowrap;
 }
 
-
+/******media query******/
 @media only screen and (min-width: 680) {
  body{
   .main_content { 
