@@ -35,14 +35,14 @@ header a {
 .nav {
   background-color: black;
   color: white;
-  padding: 2px;
+  padding: 1px;
+  padding-right: 10px;
 }
 nav ul {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
-  padding-right: 10px;
 }
 .one {
   grid-column: 1;
