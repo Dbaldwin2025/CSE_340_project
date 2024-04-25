@@ -122,7 +122,6 @@ body {
   grid-row: 2;
 }
 .delorean_image {
-  z-index: -1;
   grid-column: 1/4;
   grid-row: 2;
 }
