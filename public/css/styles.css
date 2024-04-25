@@ -121,6 +121,27 @@ footer {
   background-color: white;
   color: black;
 }
+.upgrades {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.flux {
+  grid-column: 1;
+  grid-row: 1;
+}
+.flame {
+  grid-column: 2;
+  grid-row: 1;
+}
+.bumper {
+  grid-column: 1;
+  grid-row: 2;
+}
+.hub {
+  grid-column: 2;
+  grid-row: 2;
+}
+
 
 
 @media only screen and (max-width: 680) {
