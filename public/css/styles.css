@@ -122,14 +122,16 @@ body {
   grid-row: 2;
 }
 .delorean_image {
+  width: 450px;
+  height: auto;
   grid-column: 1/4;
   grid-row: 2;
 }
 
 /*******review*******/
 .review {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
   background-color: white;
   color: black;
   grid-column: 1/2;
@@ -138,8 +140,8 @@ body {
 
 /*******upgrades*******/
 .upgrades {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
   grid-column: 3/4;
   grid-row: 3;
   display: grid;
