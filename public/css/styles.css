@@ -103,6 +103,7 @@ body {
   background-color: white;  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "Welcome" "delorean_image" "review" "upgrades";
 }
 .Welcome {
   white-space: nowrap;;
