@@ -120,6 +120,7 @@ body {
   background-color:rgba(rgba(255, 255, 255, 0.51), green, blue, 5);
   grid-column: 1;
   grid-row: 2;
+  z-index: 2;
 }
 .delorean_image {
   width: 450px;
