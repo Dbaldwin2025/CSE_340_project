@@ -210,12 +210,25 @@ a {
     grid-row: 2;
   }
   
+
+.review_upgrades {
+  max-width: 1000px;
+  height: auto;
+  grid-column: 1/2;
+  grid-row: 3;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
   /*******review*******/
   .review {
     height: auto;
     max-width: 450px;
     background-color: brown;
-
+    grid-column: 1;
+    grid-row: 1;
     padding: 15px;
     white-space: nowrap;
   }
@@ -224,14 +237,8 @@ a {
   .upgrades {
     height: auto;
     max-width: 450px;
-
+    grid-column: 2;
+    grid-row: 1;
     padding: 15px;
   }
-.review_upgrades {
-  max-width: 1000px;
-  height: auto;
-  grid-column: 1/2;
-  grid-row: 3;
-  padding: 15px;
-}
 }
