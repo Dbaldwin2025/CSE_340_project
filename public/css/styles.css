@@ -190,7 +190,7 @@ a {
 /******media query******/
 @media only screen and (min-width: 710px) {
   .main_content {
-    justify-items: center;
+    justify-items: start;
   }
   .Welcome {
     font-size: 3em;
