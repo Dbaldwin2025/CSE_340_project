@@ -119,6 +119,7 @@ body {
   height: 125px;
   width: 125PX;
   color: cyan;
+  font-weight: bold;
   background-color:rgba(255,255,255,.8);
   grid-column: 1;
   grid-row: 2;
@@ -223,8 +224,8 @@ a {
   /*******upgrades*******/
   .upgrades {
     height: auto;
-    max-width: 450px;
-    grid-column: 1/2;
+    width: auto;
+    grid-column: 2;
     grid-row: 3;
     padding: 15px;
   }
