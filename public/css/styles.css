@@ -200,8 +200,7 @@ a {
     padding: 15px;
   }
   .delorean_image {
-    max-width: 1200px;
-    height: auto;
+
     grid-column: 1/4;
     grid-row: 2;
   }
@@ -209,8 +208,7 @@ a {
   /*******review*******/
   .review {
     background-color: brown;
-    height: auto;
-    max-width: 550px;
+
     grid-column: 1/2;
     grid-row: 3;
     padding: 15px;
@@ -218,8 +216,7 @@ a {
 
   /*******upgrades*******/
   .upgrades {
-    height: auto;
-    max-width: 550px;
+
     grid-column: 3/4;
     grid-row: 3;
     padding: 15px;
