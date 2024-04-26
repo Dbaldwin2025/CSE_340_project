@@ -229,5 +229,8 @@ a {
     grid-row: 3;
     padding: 15px;
   }
-
+.review_upgrades {
+  max-width: 1000px;
+  height: auto;
+}
 }
