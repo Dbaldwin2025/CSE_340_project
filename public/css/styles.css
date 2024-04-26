@@ -193,7 +193,7 @@ a {
   .main_content { 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+    justify-items: stretch;
   }
   .Welcome {
     white-space: nowrap;
@@ -212,7 +212,7 @@ a {
   /*******review*******/
   .review {
     height: auto;
-    width: 250px;
+    max-width: 450px;
     grid-column: 1;
     grid-row: 3;
     padding: 15px;
@@ -222,7 +222,7 @@ a {
   /*******upgrades*******/
   .upgrades {
     height: auto;
-    width: 250px;
+    max-width: 450px;
     grid-column: 2;
     grid-row: 3;
     padding: 15px;
