@@ -88,8 +88,7 @@ body {
   background-color: white;
   background-image: url("/images/site/checkerboard.jpg");
   background-repeat: repeat;
-  height: 100%;
-  width: 100%;
+ 
 }
 #wrapper {
   padding: 5px;
