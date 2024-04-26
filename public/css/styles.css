@@ -207,13 +207,13 @@ a {
   /*******review*******/
   .review {
     height: auto;
-    max-width: 650px;
+    max-width: 750px;
   }
 
   /*******upgrades*******/
   .upgrades {
     height: auto;
-    max-width: 650px;
+    max-width: 750px;
   }
 }
 
@@ -231,7 +231,7 @@ a {
     padding: 15px;
   }
   .delorean_image {
-    max-width: 1400px;
+    max-width: 1600px;
     height: auto;
     grid-column: 1/2;
     grid-row: 2;
