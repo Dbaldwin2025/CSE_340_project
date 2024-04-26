@@ -214,7 +214,7 @@ a {
   /*******review*******/
   .review {
     height: auto;
-    max-width: 4cqh;
+    max-width: 450px;
     grid-column: 1;
     grid-row: 3;
     padding: 15px;
