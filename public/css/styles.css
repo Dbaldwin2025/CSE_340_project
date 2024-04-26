@@ -225,7 +225,7 @@ a {
     padding: 15px;
   }
   .delorean_image {
-    max-width: 800px;
+    max-width: 1400px;
     height: auto;
     grid-column: 1/2;
     grid-row: 2;
