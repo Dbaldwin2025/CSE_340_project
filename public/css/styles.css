@@ -203,7 +203,8 @@ a {
     padding: 15px;
   }
   .delorean_image {
-
+    max-width: 800px;
+    height: auto;
     grid-column: 1/2;
     grid-row: 2;
     padding: 20px;
@@ -217,6 +218,7 @@ a {
     grid-row: 3;
     padding: 15px;
     white-space: nowrap;
+    justify-self: end;
   }
 
   /*******upgrades*******/
@@ -226,6 +228,6 @@ a {
     grid-column: 2;
     grid-row: 3;
     padding: 15px;
-    float: left;
+    justify-self: start;
   }
 }
