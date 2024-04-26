@@ -190,6 +190,12 @@ a {
 /******media query******/
 @media only screen and (min-width: 710px) {
 
+  .main_content {
+    justify-content: center;
+  }
+  .DMC {
+    justify-self: left;
+  }
   .Welcome {
     font-size: 3em;
   }
