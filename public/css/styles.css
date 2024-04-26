@@ -106,9 +106,10 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 .Welcome {
-  white-space: nowrap;;
+  white-space: nowrap;
   grid-column: 1/2;
   grid-row: 1;
+  padding: 15px;
 }
 #btn-1 {
  background-color: cyan;
