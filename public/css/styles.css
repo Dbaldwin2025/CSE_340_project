@@ -212,7 +212,7 @@ a {
   /*******review*******/
   .review {
     height: auto;
-    max-width: 250px;
+    width: 250px;
     grid-column: 1;
     grid-row: 3;
     padding: 15px;
@@ -222,7 +222,7 @@ a {
   /*******upgrades*******/
   .upgrades {
     height: auto;
-    max-width: 250px;
+    width: 250px;
     grid-column: 2;
     grid-row: 3;
     padding: 15px;
