@@ -188,6 +188,7 @@ a {
   .main_content { 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(300px, auto);
   }
   .delorean_image {
     max-width: 1200px;
