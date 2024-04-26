@@ -165,18 +165,22 @@ body {
   grid-row: 1/2;
 }
 .flux {
+  padding: 5px;
   grid-column: 1;
   grid-row: 2;
 }
 .flame {
+  padding: 5px;
   grid-column: 2;
   grid-row: 2;
 }
 .bumper {
+  padding: 5px;
   grid-column: 1;
   grid-row: 3;
 }
 .hub {
+  padding: 5px;
   grid-column: 2;
   grid-row: 3;
 }
@@ -190,6 +194,7 @@ a {
   .main_content { 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
   }
   .Welcome {
     white-space: nowrap;
