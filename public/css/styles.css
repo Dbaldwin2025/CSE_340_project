@@ -215,8 +215,7 @@ a {
     height: auto;
     max-width: 450px;
     background-color: brown;
-    grid-column: 1;
-    grid-row: 3;
+
     padding: 15px;
     white-space: nowrap;
   }
@@ -225,12 +224,14 @@ a {
   .upgrades {
     height: auto;
     max-width: 450px;
-    grid-column: 2;
-    grid-row: 3;
+
     padding: 15px;
   }
 .review_upgrades {
   max-width: 1000px;
   height: auto;
+  grid-column: 1/2;
+  grid-row: 3;
+  padding: 15px;
 }
 }
