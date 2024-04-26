@@ -191,6 +191,8 @@ a {
 @media only screen and (min-width: 680px) {
  
   .main_content { 
+    max-width: 80%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: stretch;
