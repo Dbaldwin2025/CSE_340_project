@@ -214,7 +214,6 @@ a {
   .review {
     height: auto;
     max-width: 450px;
-    background-color: brown;
     grid-column: 1;
     grid-row: 3;
     padding: 15px;
