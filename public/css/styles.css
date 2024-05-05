@@ -144,6 +144,9 @@ body {
 .review_title {
   white-space: nowrap;
 }
+.review ul li {
+  padding: 10px;
+}
 
 /*******upgrades*******/
 .upgrades {
