@@ -24,12 +24,6 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-module.exports = Util
-
-// Route to build inventory by classification view
-router.get("/type/:classificationId", invController.buildByClassificationId);
-
-module.exports = router;
 
 /* **************************************
 * Build the classification view HTML
@@ -63,3 +57,7 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+
+module.exports = Util
+
