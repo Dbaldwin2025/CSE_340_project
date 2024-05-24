@@ -35,7 +35,7 @@ app.get("/", baseController.buildHome)
  * Values from .env (environment) file
  *************************/
 const port = process.env.PORT || 5432;
-const host = process.env.HOST
+const host = process.env.HOST || 5432;
 
 /* ***********************
  * Log statement to confirm server operation
