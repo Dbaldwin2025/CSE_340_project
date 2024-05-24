@@ -28,7 +28,7 @@ app.get("/", function(req, res) {
   res.render("index", {title: "Home"})
 })
 */
-app.get("/", baseController.buildHome)
+app.get("/", baseController.buildHome) 
 
 /* ***********************
  * Local Server Information
