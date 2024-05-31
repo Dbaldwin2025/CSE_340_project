@@ -179,7 +179,7 @@ a {
 .vehicle {
   list-style-type: none;
   background-color: white;
-  align-items: center;
+  text-align: center;
 }
 .vehicle_title {
   background-color: white;
@@ -188,19 +188,18 @@ a {
 }
 .vehicle ul {
   margin: 0px;
-
 }
 .vehicle li {
   list-style-type: none;
   width: 270px;
-  height: 320px;
+  height: 230px;
   background-color: white;
   margin: 15px;
   display: inline-block;
   border-width: 1px;
   border-color: black;
   border-style: solid;
- 
+  text-align: center;
 }
 .vehicle li hr {
   border-color: black;
@@ -211,7 +210,7 @@ a {
 }
 .vehicle li img {
   white-space: wrap;
-  width: 260px;
+  height: 115px;
 
 }
 .vehicle li span {
