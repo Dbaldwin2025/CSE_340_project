@@ -24,7 +24,6 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-
 /* **************************************
 * Build the classification view HTML
 * ************************************ */
@@ -58,6 +57,26 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+Util.buildDetailView = async function(data2){
+  let detailView 
+  if(data2.length > 0){
+    detailView = '<div id="inv-display">'
+    detailView += '<img src="' + data2[0].inv_image
+    +'" alt="Image of '+ data2[0].inv_make + ' ' + data2[0].inv_model 
+    +' on CSE Motors" />'
+    detailView +=  '<h2>'+ data2[0].inv_make + ' '+ data2[0].inv_model 
+    + '</h2>' 
+    detailView += '<span>$' 
+    + new Intl.NumberFormat('en-US').format(data2[0].inv_price) + '</span>'
+    detailView += '<p class="description">' + "Description: " + data2[0].inv_description + '</p>'
+    detailView += '<p class="color">' + "Color: " + data2[0].inv_color + '</p>'
+    detailView += '<p class="miles">' + "Miles: " + data2[0].inv_miles + '</p>'
+  detailView += '</div>'
+} else { 
+  detailView += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+}
+  return detailView
+}
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
