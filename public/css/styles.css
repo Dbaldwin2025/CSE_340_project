@@ -176,6 +176,50 @@ a {
   align-self: center;
 }
 
+.vehicle {
+  list-style-type: none;
+  background-color: white;
+  align-items: center;
+}
+.vehicle_title {
+  background-color: white;
+  padding: 20px;
+  margin: 0px;
+}
+.vehicle ul {
+  margin: 0px;
+
+}
+.vehicle li {
+  list-style-type: none;
+  width: 270px;
+  height: 320px;
+  background-color: white;
+  margin: 15px;
+  display: inline-block;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+ 
+}
+.vehicle li hr {
+  border-color: black;
+  border-width: 2px;
+}
+.vehicle li h2 {
+  font-size: .9em;
+}
+.vehicle li img {
+  white-space: wrap;
+  width: 260px;
+
+}
+.vehicle li span {
+  
+}
+
+
+
 /******media query******/
 @media only screen and (min-width: 710px) {
 
