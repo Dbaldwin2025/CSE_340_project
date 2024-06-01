@@ -60,18 +60,21 @@ Util.buildClassificationGrid = async function(data){
 Util.buildDetailView = async function(data2){
   let detailView 
   if(data2.length > 0){
-    detailView = '<div id="inv-display">'
+    detailView = '<div class="detail_page">'
+    detailView += '<div class="detail_view">'
     detailView += '<img src="' + data2[0].inv_image
     +'" alt="Image of '+ data2[0].inv_make + ' ' + data2[0].inv_model 
-    +' on CSE Motors" />'
+    +' on CSE Motors" /> </div>'
+    detailView += '<div class="detail_data">'
     detailView +=  '<h2>'+ data2[0].inv_make + ' '+ data2[0].inv_model 
     + '</h2>' 
-    detailView += '<span>$' 
+    detailView += '<span> Price: $' 
     + new Intl.NumberFormat('en-US').format(data2[0].inv_price) + '</span>'
     detailView += '<p class="description">' + "Description: " + data2[0].inv_description + '</p>'
     detailView += '<p class="color">' + "Color: " + data2[0].inv_color + '</p>'
     detailView += '<p class="miles">' + "Miles: " + data2[0].inv_miles + '</p>'
-  detailView += '</div>'
+    detailView += '</div>'
+    detailView += '</div>'
 } else { 
   detailView += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
 }
