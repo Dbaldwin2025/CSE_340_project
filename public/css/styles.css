@@ -237,6 +237,9 @@ a {
   grid-row: 1;
 }
 
+.bold1 {
+  font-weight: bold;
+}
 
 /******media query******/
 @media only screen and (min-width: 710px) {

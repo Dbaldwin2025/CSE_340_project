@@ -68,11 +68,11 @@ Util.buildDetailView = async function(data2){
     detailView += '<div class="detail_data">'
     detailView +=  '<h2>'+ data2[0].inv_make + ' '+ data2[0].inv_model 
     + '</h2>' 
-    detailView += '<span> Price: $' 
+    detailView += '<span> <span class="bold1">Price: </span> $' 
     + new Intl.NumberFormat('en-US').format(data2[0].inv_price) + '</span>'
-    detailView += '<p class="description">' + "Description: " + data2[0].inv_description + '</p>'
-    detailView += '<p class="color">' + "Color: " + data2[0].inv_color + '</p>'
-    detailView += '<p class="miles">' + "Miles: " + data2[0].inv_miles + '</p>'
+    detailView += '<p class="description">' + '<span class="bold1">Descripton: </span>' + data2[0].inv_description + '</p>'
+    detailView += '<p class="color">' + '<span class="bold1">Color: </span>' + data2[0].inv_color + '</p>'
+    detailView += '<p class="miles">' + '<span class="bold1">Miles: </span>' + data2[0].inv_miles + '</p>'
     detailView += '</div>'
     detailView += '</div>'
 } else { 
