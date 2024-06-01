@@ -232,7 +232,6 @@ a {
 .detail_data {
   background-color: white;
   width: 340px;
-  word-wrap: wrap;
   grid-column: 2;
   grid-row: 1;
 }
@@ -246,9 +245,7 @@ a {
   .detail_page {
     display: inline-block;
     text-align: left;
-
   }
-
   .detail_view img {
     width: 450px;
   }
@@ -282,11 +279,12 @@ a {
 @media only screen and (min-width: 1010px) {
   .detail_page {
     display: grid;
-    grid-template-columns: repeat(auto, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     text-align: left;
   }
   .detail_view img {
     width: 450px;
+    margin-left: 20px;
   }
   .main_content { 
     display: grid;
