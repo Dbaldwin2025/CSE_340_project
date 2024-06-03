@@ -57,8 +57,14 @@ footer {
   padding: 15px;
   display: grid;
   grid-template-columns: 100px auto 100px;
+  display: block;
+  text-align: center;
+}
+.errorLink {
+  padding: 10px;
 }
 .copyright {
+  padding: 10px;
   white-space: nowrap;
   grid-column: 1;
   grid-row: 1;
@@ -121,6 +127,8 @@ body {
   grid-column: 1;
   grid-row: 3;
   padding: 15px;
+  display: inline-block;
+  text-align: center;
 }
 .review_title {
   white-space: nowrap;
@@ -136,6 +144,8 @@ body {
   grid-column: 1;
   grid-row: 4;
   padding: 15px;
+  display: inline-block;
+  text-align: center;
 }
 .upgrades_options {
   display: grid;
@@ -173,7 +183,12 @@ a {
 
 .errorTitle {
   font-size: 2em;
-  align-self: center;
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  padding-bottom: 450px;
+  margin: 0px;
+
 }
 
 .vehicle {
