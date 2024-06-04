@@ -11,7 +11,9 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
+const inventoryController = require("./controllers/invController")
 const inventoryRoute = require("./routes/inventoryRoute")
+const inventoryModel = require("./models/inventory-model")
 const utilities = require("./utilities/index")
 
 /* ***********************
@@ -30,6 +32,9 @@ app.use("/inv", inventoryRoute)
 app.use(static)
 
 app.get("/", utilities.handleErrors(baseController.buildHome))
+app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId,inventoryController.buildByInvId))
+app.get("/", utilities.handleErrors(inventoryModel.getClassifications, inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest))
+app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView, utilities.buildDetailView2, utilities.getNav))
 
 
 // File Not Found Route - must be last route in list
@@ -44,7 +49,7 @@ app.use(async (req, res, next) => {
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-  if(err.status == 404){ message = err.message} else {message = 'Oh no! The app crashed. Maybe try a different route?'}
+  if(err.status == 404){ message = err.message} else {message = 'The app crashed! Try a different route?'}
   res.render("errors/error", {
     title: err.status || 'Server Error',
     message,

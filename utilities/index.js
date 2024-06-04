@@ -37,7 +37,7 @@ Util.buildClassificationGrid = async function(data){
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
       + 'details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
-      +' on CSE Motors" ></a>'
+      +' on CSE Motors"></a>'
       grid += '<div class="namePrice">'
       grid += '<hr >'
       grid += '<h2>'
@@ -64,7 +64,7 @@ Util.buildDetailView = async function(data2){
     detailView += '<div class="detail_view">'
     detailView += '<img src="' + data2[0].inv_image
     +'" alt="Image of '+ data2[0].inv_make + ' ' + data2[0].inv_model 
-    +' on CSE Motors" /> </div>'
+    +' on CSE Motors"> </div>'
     detailView += '<div class="detail_data">'
     detailView +=  '<h2>'+ data2[0].inv_make + ' '+ data2[0].inv_model 
     + '</h2>' 
@@ -80,6 +80,7 @@ Util.buildDetailView = async function(data2){
 }
   return detailView
 }
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

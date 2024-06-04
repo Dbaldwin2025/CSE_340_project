@@ -36,4 +36,20 @@ invCont.buildByInvId = async function (req, res, next) {
   })
 }
 
+/* ***************************
+ *  Build detail view 2
+ * ************************** */
+invCont.buildTest = async function (req, res, next) {
+  var test_num = req.params.testNum
+  test_num = 1
+  const detailView2 = "Hello test page"
+  let nav = await utilities.getNav()
+  res.render("./errors/test", {
+ //   title: "test",
+    nav,
+    detailView2,
+  })
+}
+
+
 module.exports = invCont
