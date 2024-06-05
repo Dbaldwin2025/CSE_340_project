@@ -129,6 +129,7 @@ body {
   padding: 15px;
   display: inline-block;
   text-align: center;
+  text-decoration: none;
 }
 .review_title {
   white-space: nowrap;
