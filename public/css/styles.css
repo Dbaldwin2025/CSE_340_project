@@ -154,9 +154,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: end;
+  
 }
 .upgrade_title {
   white-space: nowrap;
+  padding-left: 5px;
   grid-column: 1;
   grid-row: 1/2;
 }
