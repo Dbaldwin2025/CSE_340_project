@@ -1,4 +1,6 @@
 const invModel = require("../models/inventory-model")
+const regModel = require('../models/account-model')
+//const build = require("../controllers/accountController")
 const Util = {}
 
 /* ************************
@@ -79,6 +81,109 @@ Util.buildDetailView = async function(data2){
   detailView += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
 }
   return detailView
+}
+
+
+Util.buildLoginPage = async function() {
+let login
+  if(3>2) {
+    login = '<div class="login">'
+    login += '<form>'
+
+    login += '<div>'
+    login += '<label >Email Address:</label>'
+    login += '</div>'
+
+    login += '<div>'
+    login += '<input title="Email Address">'
+    login += '</div>'
+
+    login += '<div>'
+    login += '<label>Password:</label>'
+    login += '</div>'
+
+    login += '<div>'
+    login += '<input title="Password">'
+    login += '</div>'
+
+    login += '<div>'
+    login += '<p>Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</p>'
+    login += '</div>'
+
+    login += '<div>'
+    login += '<button class="show">Show Password</button>' 
+    login += '</div>'
+
+    login += '<div>'
+    login += '<button type="Submit" value="Submit">Login</button>'  
+    login += '</div>'
+
+    login += '</form>'
+
+    login += '<div>'
+    login += '<p>No account? '
+    login += "<a href='/account/register'>Sign-up</a> </p>"
+    login += '</div>'
+
+    login += '</div>'
+} else { 
+  login += '<p class="notice">Sorry, no login is not availible.</p>'
+}
+  return login
+}
+
+Util.buildRegisterPage = async function() {
+  let register
+  if(3>2) {
+    register = '<div class="register">'
+    register += '<form action="/account/register" method="post">'
+
+    register += '<div>'
+    register += '<label >First name</label>'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<input title="First name">'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<label >Last name</label>'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<input title="Last name">'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<label >Email Address:</label>'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<input title="Email Address">'
+    register += '</div>'
+
+
+    register += '<div>'
+    register += '<label>Password:</label>'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<input title="Password">'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<button type="Submit value="Submit">Register</button>'  
+    register += '</div>'
+
+    register += '</form>'
+
+    register += '</div>'
+} else { 
+  register += '<p class="notice">Sorry, registration is not availible.</p>'
+}
+  return register
+
+
 }
 
 /* ****************************************

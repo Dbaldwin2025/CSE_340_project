@@ -45,7 +45,7 @@ invCont.buildTest = async function (req, res, next) {
   const detailView2 = "Hello test page"
   let nav = await utilities.getNav()
   res.render("./errors/test", {
- //   title: "test",
+//    title: "test",
     nav,
     detailView2,
   })

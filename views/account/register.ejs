@@ -1,0 +1,15 @@
+
+<% if (title) { %>
+<h1 class="register-title"><%= title %></h1>
+
+<div class="register-page">
+<%- register %>
+
+</div>
+
+<% } else {
+
+  res.redirect('/')
+} %>
+
+<%# message%>
