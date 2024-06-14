@@ -143,7 +143,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="First name">'
+    register += '<input title="account firstname" name="account_firstname">'
     register += '</div>'
 
     register += '<div>'
@@ -151,7 +151,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="Last name">'
+    register += '<input title="account lastname" name="account_lastname">'
     register += '</div>'
 
     register += '<div>'
@@ -159,7 +159,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="Email Address">'
+    register += '<input title="account email" name="account_email">'
     register += '</div>'
 
 
@@ -168,7 +168,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="Password">'
+    register += '<input title="account password" name="account_password">'
     register += '</div>'
 
     register += '<div>'
