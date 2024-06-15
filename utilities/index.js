@@ -95,7 +95,7 @@ let login
     login += '</div>'
 
     login += '<div>'
-    login += '<input title="Email Address">'
+    login += '<input type="email" title="email address" name="account_email" placeholder="Enter a valid email address" required>'
     login += '</div>'
 
     login += '<div>'
@@ -103,15 +103,11 @@ let login
     login += '</div>'
 
     login += '<div>'
-    login += '<input title="Password">'
+    login += '<input type="password" title="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">'
     login += '</div>'
 
     login += '<div>'
     login += '<p>Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</p>'
-    login += '</div>'
-
-    login += '<div>'
-    login += '<button class="show">Show Password</button>' 
     login += '</div>'
 
     login += '<div>'
@@ -137,13 +133,15 @@ Util.buildRegisterPage = async function() {
   if(3>2) {
     register = '<div class="register">'
     register += '<form action="/account/register" method="post">'
+    
+    register += '<p>All fields are required</p>'
 
     register += '<div>'
     register += '<label >First name</label>'
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="account firstname" name="account_firstname">'
+    register += '<input type="text" title="first name" name="account_firstname" required>'
     register += '</div>'
 
     register += '<div>'
@@ -151,7 +149,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="account lastname" name="account_lastname">'
+    register += '<input type="text" title="last name" name="account_lastname" required>'
     register += '</div>'
 
     register += '<div>'
@@ -159,7 +157,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="account email" name="account_email">'
+    register += '<input type="email" title="email address" name="account_email" placeholder="Enter a valid email address"  required>'
     register += '</div>'
 
 
@@ -168,7 +166,11 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input title="account password" name="account_password">'
+    register += '<input type="password" title="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">'
+    register += '</div>'
+
+    register += '<div>'
+    register += '<p>Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</p>'
     register += '</div>'
 
     register += '<div>'

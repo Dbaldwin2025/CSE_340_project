@@ -26,6 +26,7 @@ async function buildRegister(req, res, next) {
     title: "Register",
     nav,
     register,
+    errors: null,
   })
 }
 
