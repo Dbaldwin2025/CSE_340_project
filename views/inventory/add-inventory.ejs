@@ -1,0 +1,15 @@
+<% if (title) { %>
+<h1 class="vehicle_title"><%= title %></h1>
+
+<div class="add-inventory">
+<%- addInventory %>
+</div>
+
+<% } else {
+
+  res.redirect('/')
+} %> 
+ 
+<%# message%>
+
+

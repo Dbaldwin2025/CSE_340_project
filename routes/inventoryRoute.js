@@ -8,4 +8,5 @@ const invController = require("../controllers/invController")
 router.get("/type/:classificationId", invController.buildByClassificationId);
 router.get("/detail/:invId", invController.buildByInvId)
 router.get("/test/:testNum", invController.buildTest)
+router.get("/", invController.buildManagementPage)
 module.exports = router;

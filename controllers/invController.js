@@ -51,5 +51,22 @@ invCont.buildTest = async function (req, res, next) {
   })
 }
 
+/* ***************************
+ *  Build detail view 2
+ * ************************** */
+invCont.buildManagementPage = async function (req, res, next) {
+  var management_num = req.params.managementNum
+  management_num = 1
+  const managementView = await utilities.buildManagementPage()
+  let nav = await utilities.getNav()
+  res.render("./inventory/management", {
+        title: "Management",
+    nav,
+    managementView,
+  })
+}
+
+
+
 
 module.exports = invCont
