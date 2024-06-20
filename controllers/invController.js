@@ -65,8 +65,34 @@ invCont.buildManagementPage = async function (req, res, next) {
     managementView,
   })
 }
-
-
+/* ***************************
+ *  Build detail view 2
+ * ************************** */
+invCont.addVehicle = async function (req, res, next) {
+  var management_num = req.params.managementNum
+  management_num = 1
+  const addInventory = "New Inventory"
+  let nav = await utilities.getNav()
+  res.render("./inventory/add_inventory", {
+        title: "Add Vehicle",
+    nav,
+    addInventory,
+  })
+}
+/* ***************************
+ *  Build detail view 2
+ * ************************** */
+invCont.addClassification = async function (req, res, next) {
+  var management_num = req.params.managementNum
+  management_num = 1
+  const addClassification = "New Classification"
+  let nav = await utilities.getNav()
+  res.render("./inventory/add_classification", {
+        title: "Add Classification",
+    nav,
+    addClassification,
+  })
+}
 
 
 module.exports = invCont

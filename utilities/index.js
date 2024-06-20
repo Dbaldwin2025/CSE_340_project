@@ -194,9 +194,9 @@ Util.buildManagementPage = async function() {
   if(3>2) {
     management = '<div class="management">'
     management += '<div>'
-    management += '<a class="new_classification" href="#">New Classification</a>'
+    management += '<a class="new_classification" href="../../inv/add_classification">New Classification</a>'
     management += '</div>'
-    management+= '<a class="new_vehicle" href="#">New Vehicle</a>'
+    management+= '<a class="new_vehicle" href="../../inv/add_inventory">New Vehicle</a>'
     management += '</div>'
 } else { 
   management += '<p class="notice">Sorry, management is not availible.</p>'

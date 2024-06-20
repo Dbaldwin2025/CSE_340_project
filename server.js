@@ -67,7 +67,7 @@ app.use("/account", accountRoute)
 
 
 app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId,inventoryController.buildByInvId))
-app.get("/", utilities.handleErrors(inventoryModel.getClassifications, inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagementPage))
+app.get("/", utilities.handleErrors(inventoryModel.getClassifications, inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagementPage, inventoryController.addVehicle, inventoryController.addClassification))
 app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView, utilities.buildDetailView2, utilities.getNav))
 
 
