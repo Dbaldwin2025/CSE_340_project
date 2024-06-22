@@ -13,6 +13,7 @@ router.get("/", invController.buildManagement)
 router.get("/add_classification", invController.buildClassification)
 router.get("/add_inventory", invController.addVehicle)
 router.get("/add_classification", utilities.handleErrors(invController.buildClassification))
+router.get("/add_classification", utilities.handleErrors(invController.newClassification))
 router.get("/add_inventory", utilities.handleErrors(invController.addVehicle))
 
 router.post(

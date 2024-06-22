@@ -66,8 +66,6 @@ invCont.buildManagement = async function (req, res, next) {
 }
 
 invCont.addVehicle = async function (req, res, next) {
-  var management_num = req.params.managementNum
-  management_num = 1
   const addInventory = await utilities.buildNewVehicle()
   let nav = await utilities.getNav()
   res.render("./inventory/add_inventory", {
@@ -78,8 +76,6 @@ invCont.addVehicle = async function (req, res, next) {
 }
 
 invCont.buildClassification = async function (req, res, next) {
-  var management_num = req.params.managementNum
-  management_num = 1
   const addClassification = await utilities.buildNewClassification()
   let nav = await utilities.getNav()
   res.render("./inventory/add_classification", {
