@@ -66,10 +66,11 @@ app.use("/account", accountRoute)
 
 
 
+
 //app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId,inventoryController.buildByInvId))
 app.get("/", utilities.handleErrors(inventoryModel.getClassifications, inventoryModel.newClassification, inventoryController.newClassification, inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagement, inventoryController.addVehicle, inventoryController.buildClassification))
 app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView,utilities.buildRegisterPage, utilities.buildLoginPage, utilities.getNav, utilities.buildManagementPage, utilities.buildClassificationList, utilities.buildNewVehicle, utilities.buildNewClassification))
-
+app.post("/", utilities.handleErrors(inventoryController.newClassification, inventoryController.newClassification))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {

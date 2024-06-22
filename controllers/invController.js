@@ -56,8 +56,6 @@ invCont.buildTest = async function (req, res, next) {
  *  Build detail view 2
  * ************************** */
 invCont.buildManagement = async function (req, res, next) {
-  var management_num = req.params.managementNum
-  management_num = 1
   const managementView = await utilities.buildManagementPage()
   let nav = await utilities.getNav()
   res.render("./inventory/management", {
@@ -108,7 +106,7 @@ async function newClassification(req, res) {
       `Congratulations, you added a new classification ${classification_name}.`
     )
     const managementView = await utilities.buildManagementPage()
-    res.status(201).render("inv/", {
+    res.status(201).render("./inventory/management", {
       title: "Management",
       nav,
       managementView,
@@ -116,7 +114,7 @@ async function newClassification(req, res) {
   } else {
     req.flash("notice", "Sorry, the new classification failed.")
     const managementView = await utilities.buildManagementPage()
-    res.status(501).render("inv/", {
+    res.status(501).render("./inventory/management", {
       title: "Managemant",
       nav,
       managementView,
@@ -124,5 +122,43 @@ async function newClassification(req, res) {
   }
 }
 
-module.exports = invCont, {newClassification}
-//module.exports = {newClassification}
+async function newVehicle(req, res) {
+  let nav = await utilities.getNav()
+  const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
+
+  const regResult = await invModel.newVehicle(
+    inv_make,
+    inv_model,
+    inv_year, 
+    inv_description, 
+    inv_image, 
+    inv_thumbnail, 
+    inv_price, 
+    inv_miles, 
+    inv_color
+  )
+
+  if (regResult) {
+    req.flash(
+      "notice",
+      `Congratulations, you added ${inv_make} - ${invModel}.`
+    )
+    const managementView = await utilities.buildManagementPage()
+    res.status(201).render("./inventory/management", {
+      title: "Managemant",
+      nav,
+      managementView,
+    })
+  } else {
+    req.flash("notice", "Sorry, the new vehicle failed.")
+    const managementView = await utilities.buildManagementPage()
+    res.status(501).render("./inventory/management", {
+      title: "Managemant",
+      nav,
+      managementView,
+    })
+  }
+}
+
+
+module.exports = invCont, {newClassification, newVehicle}

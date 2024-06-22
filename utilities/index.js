@@ -253,7 +253,7 @@ Util.buildNewVehicle = async function() {
   if(3>2) {
     addVehicle = '<div class="new_vehicle">'
     addVehicle += '<p>FIELD IS REQUIRED</p>'
-    addVehicle += '<form action="/inventory/add_inventory" method="post">'
+    addVehicle += '<form action="/inv/add_inventory" method="post">'
 
     addVehicle += '<div>'
     addVehicle += '<label>Classification</label>'
@@ -301,21 +301,21 @@ Util.buildNewVehicle = async function() {
     addVehicle += '<label>Price</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_price" placeholder="decimal or integer" required pattern="^d*.?d*$">'
+    addVehicle += '<input type="text" name="inv_price" placeholder="decimal or integer" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Year</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_year" placeholder="4-digit year" required pattern="^(19|20)[d]{2,2}$">'
+    addVehicle += '<input type="text" name="inv_year" placeholder="4-digit year" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Miles</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_miles" placeholder="digits only" required pattern="^[0-9]*$">'
+    addVehicle += '<input type="text" name="inv_miles" placeholder="digits only" required>'
     addVehicle += '</div>'
 
 
