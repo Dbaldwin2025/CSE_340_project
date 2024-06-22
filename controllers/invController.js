@@ -53,7 +53,7 @@ invCont.buildTest = async function (req, res, next) {
 }
 
 /* ***************************
- *  Build detail view 2
+ *  Build management
  * ************************** */
 invCont.buildManagement = async function (req, res, next) {
   const managementView = await utilities.buildManagementPage()
@@ -64,9 +64,7 @@ invCont.buildManagement = async function (req, res, next) {
     managementView,
   })
 }
-/* ***************************
- *  Build detail view 2
- * ************************** */
+
 invCont.addVehicle = async function (req, res, next) {
   var management_num = req.params.managementNum
   management_num = 1

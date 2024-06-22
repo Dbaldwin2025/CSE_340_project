@@ -1,6 +1,5 @@
 const invModel = require("../models/inventory-model")
 const regModel = require('../models/account-model')
-//const build = require("../controllers/accountController")
 const Util = {}
 
 /* ************************
@@ -82,7 +81,6 @@ Util.buildDetailView = async function(data2){
 }
   return detailView
 }
-
 
 Util.buildLoginPage = async function() {
 let login
@@ -184,10 +182,7 @@ Util.buildRegisterPage = async function() {
   register += '<p class="notice">Sorry, registration is not availible.</p>'
 }
   return register
-
-
 }
-
 
 Util.buildManagementPage = async function() {
   let management
@@ -204,8 +199,6 @@ Util.buildManagementPage = async function() {
   management += '<p class="notice">Sorry, management is not availible.</p>'
 }
   return management
-
-
 }
 
 Util.buildNewClassification = async function() {
@@ -245,8 +238,6 @@ Util.buildClassificationList = async function (classification_id = null) {
   classificationList += "</select>"
   return classificationList
 }
-
-
 
 Util.buildNewVehicle = async function() {
   let addVehicle
@@ -318,7 +309,6 @@ Util.buildNewVehicle = async function() {
     addVehicle += '<input type="text" name="inv_miles" placeholder="digits only" required>'
     addVehicle += '</div>'
 
-
     addVehicle += '<div>'
     addVehicle += '<label>Color</label>'
     addVehicle += '</div>'
@@ -334,9 +324,6 @@ Util.buildNewVehicle = async function() {
 }
   return addVehicle
 }
-
-
-
 
 /* ****************************************
  * Middleware For Handling Errors
