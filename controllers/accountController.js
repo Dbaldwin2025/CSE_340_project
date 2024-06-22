@@ -58,8 +58,8 @@ async function registerAccount(req, res) {
   } else {
     req.flash("notice", "Sorry, the registration failed.")
     const login = await utilities.buildLoginPage()
-    res.status(501).render("account/register", {
-      title: "Registration",
+    res.status(501).render("account/login", {
+      title: "Login",
       nav,
       login,
     })

@@ -196,7 +196,9 @@ Util.buildManagementPage = async function() {
     management += '<div>'
     management += '<a class="new_classification" href="../../inv/add_classification">New Classification</a>'
     management += '</div>'
-    management+= '<a class="new_vehicle" href="../../inv/add_inventory">New Vehicle</a>'
+    management += '<div>'
+    management += '<a class="new_classification" href="../../inv/add_inventory">New Vehicle</a>'
+    management += '</div>'
     management += '</div>'
 } else { 
   management += '<p class="notice">Sorry, management is not availible.</p>'
@@ -205,6 +207,26 @@ Util.buildManagementPage = async function() {
 
 
 }
+
+Util.buildNewClassification = async function() {
+  let addClassification
+  if(3>2) {
+    addClassification = '<div class="new_classification">'
+    addClassification += '<p>FIELD IS REQUIRED</p>'
+    addClassification += '<form action="/inv/add_classification" method="post">'
+    addClassification += '<label>Classification name</label>'
+    addClassification += '<div>'
+    addClassification += '<input type="text" name="classification_name" required pattern="^([A-Za-z]+){3,40}$">'
+    addClassification += '</div>'
+    addClassification += '<input type="submit" value="submit">'
+    addClassification += '</form>'
+    addClassification += '</div>'
+} else { 
+  addClassification += '<p class="notice">Sorry, add classification is not availible.</p>'
+}
+  return addClassification
+}
+
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let classificationList =
@@ -223,6 +245,97 @@ Util.buildClassificationList = async function (classification_id = null) {
   classificationList += "</select>"
   return classificationList
 }
+
+
+
+Util.buildNewVehicle = async function() {
+  let addVehicle
+  if(3>2) {
+    addVehicle = '<div class="new_vehicle">'
+    addVehicle += '<p>FIELD IS REQUIRED</p>'
+    addVehicle += '<form action="/inventory/add_inventory" method="post">'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Classification</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += await Util.buildClassificationList()
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Make</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_make" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Model</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_model" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Description</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<textarea name="inv_description" rows="4" cols"200" ></textarea>'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Image Path</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_image" placeholder="/images/vehicle/no-image.png" required>'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Image Thumbnail</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_thumbnail" placeholder="/images/vehicle/no-image.png" required>'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Price</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_price" placeholder="decimal or integer" required pattern="^d*.?d*$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Year</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_year" placeholder="4-digit year" required pattern="^(19|20)[d]{2,2}$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Miles</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_miles" placeholder="digits only" required pattern="^[0-9]*$">'
+    addVehicle += '</div>'
+
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Color</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input type="text" name="inv_color" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<input type="submit" value="submit">'
+    addVehicle += '</form>'
+    addVehicle += '</div>'
+} else { 
+  addVehicle += '<p class="notice">Sorry, add vehicle is not availible.</p>'
+}
+  return addVehicle
+}
+
+
 
 
 /* ****************************************
