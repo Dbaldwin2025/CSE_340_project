@@ -223,7 +223,7 @@ Util.buildNewClassification = async function() {
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let classificationList =
-    '<select name="classification_id" id="classificationList" required>'
+    '<select title="classification" name="classification_id" id="classificationList" required>'
   classificationList += "<option value=''>Choose a Classification</option>"
   data.rows.forEach((row) => {
     classificationList += '<option value="' + row.classification_id + '"'
@@ -257,63 +257,64 @@ Util.buildNewVehicle = async function() {
     addVehicle += '<label>Make</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_make" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '<input title="make" type="text" name="inv_make" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Model</label>'
     addVehicle += '</div>'
+
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_model" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '<input title="model" type="text" name="inv_model" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Description</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<textarea name="inv_description" rows="4" cols"200" ></textarea>'
+    addVehicle += '<textarea title="description" name="inv_description" ></textarea>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Image Path</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_image" placeholder="/images/vehicle/no-image.png" required>'
+    addVehicle += '<input title="image path" type="text" name="inv_image" placeholder="/images/vehicle/no-image.png" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Image Thumbnail</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_thumbnail" placeholder="/images/vehicle/no-image.png" required>'
+    addVehicle += '<input title="image thumbnail" type="text" name="inv_thumbnail" placeholder="/images/vehicle/no-image.png" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Price</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_price" placeholder="decimal or integer" required>'
+    addVehicle += '<input title="price" type="text" name="inv_price" placeholder="decimal or integer" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Year</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_year" placeholder="4-digit year" required>'
+    addVehicle += '<input title="year" type="text" name="inv_year" placeholder="4-digit year" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Miles</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_miles" placeholder="digits only" required>'
+    addVehicle += '<input title="miles" type="text" name="inv_miles" placeholder="digits only" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Color</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input type="text" name="inv_color" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '<input title="color" type="text" name="inv_color" required pattern="^([A-Za-z]+){3,40}$">'
     addVehicle += '</div>'
 
     addVehicle += '<input type="submit" value="submit">'
