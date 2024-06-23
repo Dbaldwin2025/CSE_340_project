@@ -34,7 +34,7 @@ async function newClassification (req, res) {
   async function newVehicle(req, res) {
     let nav = await utilities.getNav()
     const managementView = await utilities.buildManagementPage()
-    const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
+    const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id } = req.body
   
     const regResult = await invModel.newVehicle(
       inv_make,
@@ -45,7 +45,8 @@ async function newClassification (req, res) {
       inv_thumbnail, 
       inv_price, 
       inv_miles, 
-      inv_color
+      inv_color,
+      classification_id
     )
   
     if (regResult) {

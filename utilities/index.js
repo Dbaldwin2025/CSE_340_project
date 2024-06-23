@@ -247,13 +247,6 @@ Util.buildNewVehicle = async function() {
     addVehicle += '<form action="/inv/addNewInventory" method="post">'
 
     addVehicle += '<div>'
-    addVehicle += '<label>Classification</label>'
-    addVehicle += '</div>'
-    addVehicle += '<div>'
-    addVehicle += await Util.buildClassificationList()
-    addVehicle += '</div>'
-
-    addVehicle += '<div>'
     addVehicle += '<label>Make</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
@@ -266,6 +259,13 @@ Util.buildNewVehicle = async function() {
 
     addVehicle += '<div>'
     addVehicle += '<input title="model" type="text" name="inv_model" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Year</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += '<input title="year" type="text" name="inv_year" placeholder="4-digit year" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
@@ -297,13 +297,6 @@ Util.buildNewVehicle = async function() {
     addVehicle += '</div>'
 
     addVehicle += '<div>'
-    addVehicle += '<label>Year</label>'
-    addVehicle += '</div>'
-    addVehicle += '<div>'
-    addVehicle += '<input title="year" type="text" name="inv_year" placeholder="4-digit year" required>'
-    addVehicle += '</div>'
-
-    addVehicle += '<div>'
     addVehicle += '<label>Miles</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
@@ -315,6 +308,13 @@ Util.buildNewVehicle = async function() {
     addVehicle += '</div>'
     addVehicle += '<div>'
     addVehicle += '<input title="color" type="text" name="inv_color" required pattern="^([A-Za-z]+){3,40}$">'
+    addVehicle += '</div>'
+
+    addVehicle += '<div>'
+    addVehicle += '<label>Classification</label>'
+    addVehicle += '</div>'
+    addVehicle += '<div>'
+    addVehicle += await Util.buildClassificationList()
     addVehicle += '</div>'
 
     addVehicle += '<input type="submit" value="submit">'
