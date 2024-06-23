@@ -68,7 +68,7 @@ invCont.buildManagement = async function (req, res, next) {
 invCont.addVehicle = async function (req, res, next) {
   const addInventory = await utilities.buildNewVehicle()
   let nav = await utilities.getNav()
-  res.render("./inventory/add_inventory", {
+  res.render("./inventory/addNewInventory", {
         title: "Add Vehicle",
     nav,
     addInventory,
@@ -78,15 +78,16 @@ invCont.addVehicle = async function (req, res, next) {
 invCont.buildClassification = async function (req, res, next) {
   const addClassification = await utilities.buildNewClassification()
   let nav = await utilities.getNav()
-  res.render("./inventory/add_classification", {
+  res.render("./inventory/addNewClassification", {
         title: "Add Classification",
     nav,
     addClassification,
     errors: null,
   })
 }
+/*
 
-async function newClassification(req, res) {
+invCont.newClassification = async function(req, res) {
   let nav = await utilities.getNav() 
   const managementView = await utilities.buildManagementPage()
   const { classification_name } = req.body
@@ -117,7 +118,7 @@ async function newClassification(req, res) {
   }
 }
 
-async function newVehicle(req, res) {
+invCont.newVehicle = async function(req, res) {
   let nav = await utilities.getNav()
   const managementView = await utilities.buildManagementPage()
   const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
@@ -137,7 +138,7 @@ async function newVehicle(req, res) {
   if (regResult) {
     req.flash(
       "notice",
-      `Congratulations, you added ${inv_make} - ${invModel}.`
+      `Congratulations, you added ${inv_make} - ${inv_model}.`
     )
     const managementView = await utilities.buildManagementPage()
     res.status(201).render("./inventory/management", {
@@ -156,5 +157,6 @@ async function newVehicle(req, res) {
   }
 }
 
+*/
 
-module.exports = invCont, {newClassification, newVehicle}
+module.exports = invCont;

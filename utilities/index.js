@@ -189,10 +189,10 @@ Util.buildManagementPage = async function() {
   if(3>2) {
     management = '<div class="management">'
     management += '<div>'
-    management += '<a class="new_classification" href="../../inv/add_classification">New Classification</a>'
+    management += '<a class="new_classification" href="../../inv/addNewClassification">New Classification</a>'
     management += '</div>'
     management += '<div>'
-    management += '<a class="new_classification" href="../../inv/add_inventory">New Vehicle</a>'
+    management += '<a class="new_classification" href="../../inv/addNewInventory">New Vehicle</a>'
     management += '</div>'
     management += '</div>'
 } else { 
@@ -206,12 +206,12 @@ Util.buildNewClassification = async function() {
   if(3>2) {
     addClassification = '<div class="new_classification">'
     addClassification += '<p>FIELD IS REQUIRED</p>'
-    addClassification += '<form action="/inv/add_classification" method="post">'
+    addClassification += '<form action="/inv/addNewClassification" method="post">'
     addClassification += '<label>Classification name</label>'
     addClassification += '<div>'
     addClassification += '<input type="text" name="classification_name" required pattern="^([A-Za-z]+){3,40}$">'
     addClassification += '</div>'
-    addClassification += '<input type="submit" value="submit">'
+    addClassification += '<button type="submit" value="submit">Submit</button>'
     addClassification += '</form>'
     addClassification += '</div>'
 } else { 
@@ -244,7 +244,7 @@ Util.buildNewVehicle = async function() {
   if(3>2) {
     addVehicle = '<div class="new_vehicle">'
     addVehicle += '<p>FIELD IS REQUIRED</p>'
-    addVehicle += '<form action="/inv/add_inventory" method="post">'
+    addVehicle += '<form action="/inv/addNewInventory" method="post">'
 
     addVehicle += '<div>'
     addVehicle += '<label>Classification</label>'

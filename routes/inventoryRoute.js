@@ -3,25 +3,24 @@ const express = require("express")
 const router = new express.Router() 
 const utilities = require("../utilities/")
 const invController = require("../controllers/invController")
-
+const invController2 = require("../controllers/invController2")
 
 // Route to build inventory by classification view
-router.get("/type/:classificationId", invController.buildByClassificationId);
-router.get("/detail/:invId", invController.buildByInvId)
-router.get("/test/:testNum", invController.buildTest)
-router.get("/", invController.buildManagement)
-router.get("/add_classification", invController.buildClassification)
-router.get("/add_inventory", invController.addVehicle)
-router.get("/add_classification", utilities.handleErrors(invController.buildClassification))
-router.get("/add_classification", utilities.handleErrors(invController.newClassification))
-router.get("/add_inventory", utilities.handleErrors(invController.addVehicle))
+router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
+router.get("/detail/:invId", utilities.handleErrors(invController.buildByInvId));
+router.get("/test/:testNum",utilities.handleErrors(invController.buildTest));
+router.get("/", utilities.handleErrors(invController.buildManagement));
+router.get("/addNewClassification", utilities.handleErrors(invController.buildClassification));
+router.get("/addNewInventory", utilities.handleErrors(invController.addVehicle));
 
 router.post(
-    "/add_classification", 
-    utilities.handleErrors(invController.newClassification))
+    "/addNewClassification", 
+    utilities.handleErrors(invController2.newClassification)
+);
 
-    router.post(
-        "/add_inventory", 
-        utilities.handleErrors(invController.newVehicle))
+router.post(
+        "/addNewInventory", 
+        utilities.handleErrors(invController2.newVehicle)
+);
 
 module.exports = router
