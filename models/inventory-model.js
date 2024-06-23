@@ -1,10 +1,10 @@
-const pool = require("../database/")
+const pool2 = require("../database/")
 
 /* ***************************
  *  Get all classification data
  * ************************** */
 async function getClassifications(){
-  return await pool.query("SELECT * FROM public.classification ORDER BY classification_name")
+  return await pool2.query("SELECT * FROM public.classification ORDER BY classification_name")
 }
 
 /* ***************************
@@ -12,7 +12,7 @@ async function getClassifications(){
  * ************************** */
 async function getInventoryByClassificationId(classification_id) {
   try {
-    const data = await pool.query(
+    const data = await pool2.query(
       `SELECT * FROM public.inventory AS i 
       JOIN public.classification AS c 
       ON i.classification_id = c.classification_id 
@@ -30,7 +30,7 @@ async function getInventoryByClassificationId(classification_id) {
  * ************************** */
 async function getInventoryByInvId(inv_id){
   try {
-  const data2 = await pool.query('SELECT * FROM public.inventory WHERE inv_id =$1', [inv_id])
+  const data2 = await pool2.query('SELECT * FROM public.inventory WHERE inv_id =$1', [inv_id])
 
   return data2.rows
 } catch (error) {
@@ -40,8 +40,8 @@ async function getInventoryByInvId(inv_id){
 
 async function newClassification(classification_name){
   try {
-    const sql = "INSERT INTO classification (classification_name) VALUES (1$) RETURNING *"
-    return await pool.query(sql, [classification_name])
+    const sql1 = "INSERT INTO classification (classification_name) VALUES (1$) RETURNING *"
+    return await pool2.query(sql1, [classification_name])
   } catch (error) {
     return error.message
   }
@@ -49,8 +49,8 @@ async function newClassification(classification_name){
 
 async function newVehicle(inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color){
   try {
-    const sql = "INSERT INTO inventory (inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *"
-    return await pool.query(sql, [inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color])
+    const sql2 = "INSERT INTO inventory (inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *"
+    return await pool2.query(sql2, [inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color])
   } catch (error) {
     return error.message
   }

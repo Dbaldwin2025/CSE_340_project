@@ -12,6 +12,7 @@ const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryController = require("./controllers/invController")
+const inventoryController2 = require("./controllers/invController2")
 const inventoryRoute = require("./routes/inventoryRoute")
 const inventoryModel = require("./models/inventory-model")
 const utilities = require("./utilities/index")
@@ -70,7 +71,7 @@ app.use("/account", accountRoute)
 app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId,inventoryController.buildByInvId))
 app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagement, inventoryController.addVehicle, inventoryController.buildClassification, inventoryController.newClassification, inventoryController.newVehicle))
 app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView,utilities.buildRegisterPage, utilities.buildLoginPage, utilities.getNav, utilities.buildManagementPage, utilities.buildClassificationList, utilities.buildNewVehicle, utilities.buildNewClassification))
-app.post("/", utilities.handleErrors(inventoryController.newClassification, inventoryController.newVehicle))
+app.post("/", utilities.handleErrors(inventoryController2.newClassification, inventoryController2.newVehicle))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
