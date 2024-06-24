@@ -279,14 +279,14 @@ Util.buildNewVehicle = async function() {
     addVehicle += '<label>Image Path</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input title="image path" type="text" name="inv_image" placeholder="/images/vehicle/no-image.png" required>'
+    addVehicle += '<input title="image path" type="text" name="inv_image" placeholder="/images/vehicles/image.jpg" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
     addVehicle += '<label>Image Thumbnail</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<input title="image thumbnail" type="text" name="inv_thumbnail" placeholder="/images/vehicle/no-image.png" required>'
+    addVehicle += '<input title="image thumbnail" type="text" name="inv_thumbnail" placeholder="/images/vehicles/image-tn.jpg" required>'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
