@@ -366,6 +366,9 @@ form input {
   height: 800px;
   text-align: center;
 }
+table {
+  display: inline-block;
+}
 .management-title {
   background-color: white;
   margin: 0px;
@@ -378,6 +381,7 @@ form input {
   padding: 10px;
   text-align: left;
 }
+
 .management a {
   padding: 10px;
 }

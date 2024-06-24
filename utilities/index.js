@@ -326,6 +326,8 @@ Util.buildNewVehicle = async function() {
   return addVehicle
 }
 
+
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

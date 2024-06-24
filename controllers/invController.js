@@ -57,11 +57,14 @@ invCont.buildTest = async function (req, res, next) {
  * ************************** */
 invCont.buildManagement = async function (req, res, next) {
   const managementView = await utilities.buildManagementPage()
+  const classificationSelect = await utilities.buildClassificationList()
   let nav = await utilities.getNav()
   res.render("./inventory/management", {
         title: "Management",
     nav,
+    errors: null,
     managementView,
+    classificationSelect,
   })
 }
 
@@ -85,6 +88,21 @@ invCont.buildClassification = async function (req, res, next) {
     errors: null,
   })
 }
+
+/* ***************************
+ *  Return Inventory by Classification As JSON
+ * **************************/
+invCont.getInventoryJSON = async (req, res, next) => {
+  const classification_id = parseInt(req.params.classification_id)
+  const invData = await invModel.getInventoryByClassificationId(classification_id)
+  if (invData[0].inv_id) {
+    return res.json(invData)
+  } else {
+    next(new Error("No data returned"))
+  }
+}
+
+
 /*
 
 invCont.newClassification = async function(req, res) {
@@ -121,7 +139,7 @@ invCont.newClassification = async function(req, res) {
 invCont.newVehicle = async function(req, res) {
   let nav = await utilities.getNav()
   const managementView = await utilities.buildManagementPage()
-  const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
+  const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id } = req.body
 
   const regResult = await invModel.newVehicle(
     inv_make,
@@ -132,7 +150,8 @@ invCont.newVehicle = async function(req, res) {
     inv_thumbnail, 
     inv_price, 
     inv_miles, 
-    inv_color
+    inv_color,
+    classification_id
   )
 
   if (regResult) {

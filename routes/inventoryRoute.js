@@ -12,6 +12,7 @@ router.get("/test/:testNum",utilities.handleErrors(invController.buildTest));
 router.get("/", utilities.handleErrors(invController.buildManagement));
 router.get("/addNewClassification", utilities.handleErrors(invController.buildClassification));
 router.get("/addNewInventory", utilities.handleErrors(invController.addVehicle));
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 
 router.post(
     "/addNewClassification", 
