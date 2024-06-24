@@ -327,6 +327,95 @@ Util.buildNewVehicle = async function() {
 }
 
 
+Util.editVehicle = async function() {
+  let edit
+  if(3>2) {
+    edit = '<div class="edit">'
+    
+    edit += '<form action="/inv/edit" method="post">'
+
+    edit += '<div>'
+    edit += '<label>Make</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="make" type="text" name="inv_make" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Model</label>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<input title="model" type="text" name="inv_model" placeholder="Min of 3 characters" required pattern="^([A-Za-z]+){3,40}$">'
+    edit += '</div>'
+
+    edit+= '<div>'
+    edit += '<label>Year</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="year" type="text" name="inv_year" placeholder="4-digit year" required>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Description</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<textarea title="description" name="inv_description" ></textarea>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Image Path</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="image path" type="text" name="inv_image" placeholder="/images/vehicles/image.jpg" required>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Image Thumbnail</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="image thumbnail" type="text" name="inv_thumbnail" placeholder="/images/vehicles/image-tn.jpg" required>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Price</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="price" type="text" name="inv_price" placeholder="decimal or integer" required>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Miles</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="miles" type="text" name="inv_miles" placeholder="digits only" required>'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Color</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += '<input title="color" type="text" name="inv_color" required pattern="^([A-Za-z]+){3,40}$">'
+    edit += '</div>'
+
+    edit += '<div>'
+    edit += '<label>Classification</label>'
+    edit += '</div>'
+    edit += '<div>'
+    edit += await Util.buildClassificationList()
+    edit += '</div>'
+
+
+    edit += '<input type="submit" value="submit">'
+    
+    edit += '</form>'
+    edit += '</div>'
+} else { 
+  edit += '<p class="notice">Sorry, unable to edit vehicle.</p>'
+}
+  return edit
+}
+
 
 /* ****************************************
  * Middleware For Handling Errors

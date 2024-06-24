@@ -1,0 +1,98 @@
+<% if (title) { %>
+<h1 class="vehicle_title"><%= title %></h1>
+
+<div class="add-inventory">
+<%# edit %>
+<div class="edit">
+<form action="/inv/edit" method="post">
+
+<div>
+<label>Make</label>
+</div>
+<div>
+<input title="make" type="text" name="inv_make" value="<%- inv_make%>" required pattern="^([A-Za-z]+){3,40}$">
+</div>
+
+<div>
+<label>Model</label>
+</div>
+
+<div>
+<input title="model" type="text" name="inv_model" value="<%- inv_model%>" required pattern="^([A-Za-z]+){3,40}$">
+</div>
+
+<div>
+<label>Year</label>
+</div>
+<div>
+<input title="year" type="text" name="inv_year" value="<%- inv_year%>" required>
+</div>
+
+<div>
+<label>Description</label>
+</div>
+<div>
+<input title="description" name="inv_description" value="<%- inv_description%>" >
+</div>
+
+<div>
+<label>Image Path</label>
+</div>
+<div>
+<input title="image path" type="text" name="inv_image" value="<%- inv_image%>" required>
+</div>
+
+<div>
+<label>Image Thumbnail</label>
+</div>
+<div>
+<input title="image thumbnail" type="text" name="inv_thumbnail" value="<%- inv_thumbnail%>" required>
+</div>
+
+<div>
+<label>Price</label>
+</div>
+<div>
+<input title="price" type="text" name="inv_price" value="<%- inv_price%>" required>
+</div>
+
+<div>
+<label>Miles</label>
+</div>
+<div>
+<input title="miles" type="text" name="inv_miles" value="<%- inv_miles%>" required>
+</div>
+
+<div>
+<label>Color</label>
+</div>
+<div>
+<input title="color"  type="text" name="inv_color" value="<%- inv_color%>" required pattern="^([A-Za-z]+){3,40}$">
+</div>
+
+<div>
+<label>Classification</label>
+</div>
+<div>
+<input type="text" value="<%- classification_id%>" required>
+
+ <%#  edit += await Util.buildClassificationList()%>
+</div>
+
+
+<input type="submit" value="submit">
+    
+</form>
+</div>
+
+
+</div>
+
+<% } else {
+
+  res.redirect('/')
+} %> 
+ 
+<%# message%>
+
+
