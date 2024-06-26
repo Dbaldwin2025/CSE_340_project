@@ -1,11 +1,15 @@
 <% if (title) { %>
 <h1 class="vehicle_title"><%= title %></h1>
+
 <div class="notice">
 <%- messages()%>
 </div>
-<div class="add-inventory">
-<div class="edit">
-<form action="/inv/edit" method="post">
+
+<div class="delete-inventory">
+
+<div class="delete">
+
+<form action="/inv/delete" method="post">
 
 <div>
 <label>Inventory Id</label>
@@ -90,14 +94,9 @@
 </form>
 </div>
 
-
-</div>
-
 <% } else {
 
   res.redirect('/')
 } %> 
  
 <%# message%>
-
-

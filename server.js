@@ -71,7 +71,7 @@ app.use("/account", accountRoute)
 app.get("/", utilities.handleErrors(inventoryController.getInventoryJSON))
 app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagement, inventoryController.addVehicle, inventoryController.buildClassification, inventoryController.newClassification, inventoryController.newVehicle))
 app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView,utilities.buildRegisterPage, utilities.buildLoginPage, utilities.getNav, utilities.buildManagementPage, utilities.buildClassificationList, utilities.buildNewVehicle, utilities.buildNewClassification))
-app.post("/", utilities.handleErrors(inventoryController2.newClassification, inventoryController2.newVehicle, inventoryController2.updateInventory, inventoryController2.editInventoryView))
+app.post("/", utilities.handleErrors(inventoryController2.newClassification, inventoryController2.newVehicle, inventoryController2.updateInventory, inventoryController2.editInventoryView, inventoryController2.deleteInventory, inventoryController2.deleteInventoryView))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {

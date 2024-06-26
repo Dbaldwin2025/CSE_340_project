@@ -12,12 +12,23 @@ router.get("/test/:testNum",utilities.handleErrors(invController.buildTest));
 router.get("/", utilities.handleErrors(invController.buildManagement));
 router.get("/addNewClassification", utilities.handleErrors(invController.buildClassification));
 router.get("/addNewInventory", utilities.handleErrors(invController.addVehicle));
+
 router.get("/edit/:inv_id", utilities.handleErrors(invController2.editInventoryView));
 router.get("/edit/:inv_id", utilities.handleErrors(invController2.updateInventory));
-router.get("/edit", utilities.handleErrors(utilities.buildClassificationList));
-router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
-router.get("/edit/:inv_id", utilities.handleErrors(invModel.updateVehicle));
 
+router.get("/delete/:inv_id", utilities.handleErrors(invController2.deleteInventoryView));
+router.get("/delete/:inv_id", utilities.handleErrors(invController2.deleteInventory));
+
+router.get("/edit", utilities.handleErrors(utilities.buildClassificationList));
+
+router.get("/delete", utilities.handleErrors(utilities.buildClassificationList));
+
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+//router.get("/edit/:inv_id", utilities.handleErrors(invModel.updateVehicle));
+router.get("/edit/:inv_id", utilities.handleErrors(invModel.updateInventory));
+
+router.get("/delete/:inv_id", utilities.handleErrors(invModel.deleteInventory));
 
 router.post(
     "/addNewClassification", 
@@ -32,6 +43,10 @@ router.post(
 router.post(
     "/edit", 
     utilities.handleErrors(invController2.updateInventory)
+);
+router.post(
+    "/delete", 
+    utilities.handleErrors(invController2.deleteInventory)
 );
 
 

@@ -56,7 +56,7 @@ async function newVehicle(inv_make, inv_model, inv_year, inv_description, inv_im
     return error.message
   }
 }
-
+/*
 async function updateVehicle(inv_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id){
   try {
     const sql3 = "UPDATE inventory (inv_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE inv_id =$1 "
@@ -65,6 +65,7 @@ async function updateVehicle(inv_id, inv_make, inv_model, inv_year, inv_descript
     return error.message
   }
 }
+  */
 
 /* ***************************
  *  Update Inventory Data
@@ -103,5 +104,19 @@ async function updateInventory(
     console.error("model error: " + error)
   }
 }
-module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByInvId, newClassification, newVehicle, updateVehicle, updateInventory};
+/* ***************************
+ *  Update Inventory Data
+ * ************************** */
+async function deleteInventory(inv_id) {
+  try {
+    const sql =
+      "DELETE  FROM public.inventory WHERE inv_id = $1 RETURNING *"
+    const data = await pool2.query(sql, [inv_id])
+    return data.rows[0]
+  } catch (error) {
+    console.error("model error: " + error)
+  }
+}
+
+module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByInvId, newClassification, newVehicle, updateInventory, deleteInventory};
 
