@@ -1,10 +1,23 @@
 <% if (title) { %>
 <h1 class="vehicle_title"><%= title %></h1>
-
+<div class="notice">
+<%- messages()%>
+</div>
 <div class="add-inventory">
-<%# edit %>
 <div class="edit">
 <form action="/inv/edit" method="post">
+<div>
+<label>Classification</label>
+</div>
+<div>
+<%# classificationSelect%>
+</div>
+<div>
+<label>Inventory Id</label>
+</div>
+<div>
+<input title="Inventory id" type="text" name="inv_id" value="<%- inv_id%>" required>
+</div>
 
 <div>
 <label>Make</label>
@@ -71,14 +84,11 @@
 </div>
 
 <div>
-<label>Classification</label>
+<label>Classification Id</label>
 </div>
 <div>
-<input type="text" value="<%- classification_id%>" required>
-
- <%#  edit += await Util.buildClassificationList()%>
+<input type="text" name="classification_id" value="<%- classification_id%>" required>
 </div>
-
 
 <input type="submit" value="submit">
     
