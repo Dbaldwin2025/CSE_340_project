@@ -2,6 +2,15 @@
 <h1 class="vehicle_title"><%= title %></h1>
 
 <div class="add-inventory">
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
 <%- addInventory %>
 </div>
 
@@ -10,6 +19,6 @@
   res.redirect('/')
 } %> 
  
-<%# message%>
+
 
 

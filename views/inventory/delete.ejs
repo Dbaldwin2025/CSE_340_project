@@ -5,17 +5,15 @@
 <%- messages()%>
 </div>
 
-<div class="delete-inventory">
+<div class="add-inventory">
 
-<div class="delete">
+<div class="delete_vehicle">
 
 <form action="/inv/delete" method="post">
 
+
 <div>
-<label>Inventory Id</label>
-</div>
-<div>
-<input title="Inventory id" type="text" name="inv_id" value="<%- inv_id%>" required>
+<input type="hidden"  title="Inventory id" type="text" name="inv_id" value="<%- inv_id%>" required>
 </div>
 
 <div>
@@ -83,9 +81,6 @@
 </div>
 
 <div>
-<label>Classification Id</label>
-</div>
-<div>
 <input type="hidden" name="classification_id" value="<%- classification_id%>" required>
 </div>
 
@@ -98,5 +93,3 @@
 
   res.redirect('/')
 } %> 
- 
-<%# message%>

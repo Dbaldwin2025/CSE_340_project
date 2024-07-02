@@ -5,7 +5,7 @@ const utilities = require("../utilities/")
 const invCont = {}
 
 /* ***************************
- *  Build inventory by classification view
+ *  Build inventory by classification view - working
  * ************************** */
 invCont.buildByClassificationId = async function (req, res, next) {
   const classification_id = req.params.classificationId
@@ -21,7 +21,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
 }
 
 /* ***************************
- *  Build detail view
+ *  Build detail view - working
  * ************************** */
 invCont.buildByInvId = async function (req, res, next) {
   const inv_id = req.params.invId
@@ -38,7 +38,7 @@ invCont.buildByInvId = async function (req, res, next) {
 }
 
 /* ***************************
- *  Build detail view 2
+ *  Build test page / error page - working
  * ************************** */
 invCont.buildTest = async function (req, res, next) {
   var test_num = req.params.testNum
@@ -53,7 +53,7 @@ invCont.buildTest = async function (req, res, next) {
 }
 
 /* ***************************
- *  Build management
+ *  Build management page - working
  * ************************** */
 invCont.buildManagement = async function (req, res, next) {
   const managementView = await utilities.buildManagementPage()
@@ -68,6 +68,9 @@ invCont.buildManagement = async function (req, res, next) {
   })
 }
 
+/* ***************************
+ *  Build add vehicle page - working
+ * **************************/
 invCont.addVehicle = async function (req, res, next) {
   const addInventory = await utilities.buildNewVehicle()
   let nav = await utilities.getNav()
@@ -75,9 +78,12 @@ invCont.addVehicle = async function (req, res, next) {
         title: "Add Vehicle",
     nav,
     addInventory,
+    errors: null,
   })
 }
-
+/* ***************************
+ *  Build add classification page - working
+ * **************************/
 invCont.buildClassification = async function (req, res, next) {
   const addClassification = await utilities.buildNewClassification()
   let nav = await utilities.getNav()
@@ -101,4 +107,5 @@ invCont.getInventoryJSON = async (req, res, next) => {
     next(new Error("No data returned"))
   }
 }
+
 module.exports = invCont;

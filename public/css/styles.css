@@ -30,7 +30,6 @@ header a {
   color: black;
   text-decoration: none;
 }
-
 /*******nav*******/
 .nav {
   background-color: black;
@@ -44,13 +43,11 @@ nav ul {
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
 }
-
 nav a {
   color: white;
   text-decoration: none;
   padding: 5px;
 }
-
 /*******footer*******/
 footer {
   background-color: white;
@@ -70,7 +67,6 @@ footer {
   grid-column: 1;
   grid-row: 1;
 }
-
 /*******body*******/
 body {
   background-color: white;
@@ -118,7 +114,6 @@ body {
   grid-column: 1/2;
   grid-row: 2;
 }
-
 /*******review*******/
 .review {
   height: auto;
@@ -140,7 +135,6 @@ body {
 .review ul li {
   padding: 10px;
 }
-
 /*******upgrades*******/
 .upgrades {
   height: auto;
@@ -155,7 +149,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: end;
-  
 }
 .upgrade_title {
   white-space: nowrap;
@@ -186,7 +179,6 @@ body {
 a {
   white-space: nowrap;
 }
-
 .errorTitle {
   font-size: 2em;
   text-align: center;
@@ -194,9 +186,7 @@ a {
   padding: 30px;
   padding-bottom: 450px;
   margin: 0px;
-
 }
-
 .vehicle {
   list-style-type: none;
   background-color: white;
@@ -233,9 +223,6 @@ a {
   white-space: wrap;
   height: 115px;
 }
-
-
-
 .detail_page {
   display: inline-block;
   text-align: left;
@@ -256,11 +243,9 @@ a {
   grid-column: 2;
   grid-row: 1;
 }
-
 .bold1 {
   font-weight: bold;
 }
-
 .login-page {
   background-color: white;
   margin: 0px;
@@ -268,7 +253,6 @@ a {
   height: 650px;
   text-align: center;
 }
-
 .login {
   display: inline-block;
   background-color:rgb(12, 138, 201);
@@ -292,17 +276,16 @@ form p {
   font-size: 1.2em;
   padding: 10px;
 }
-form button {
-  padding: 4px;
-  font-size: 1.1em;
+.Btn {
+  padding: 8px;
+  font-size: 1em;
   font-weight: bold;
-  margin: 10px;
+  margin: 15px;
 }
 .login-title {
   background-color: white;
   margin: 0px;
   padding: 20px;
-
 }
 form label {
   padding: 8px;
@@ -318,7 +301,6 @@ form input {
   color: white;border-radius: 30px;
   padding: 10px;
 }
-
 .login a {
   font-weight: bold;
   color: black;
@@ -381,7 +363,6 @@ table {
   padding: 10px;
   text-align: left;
 }
-
 .management a {
   padding: 10px;
 }
@@ -389,7 +370,7 @@ table {
   background-color: white;
   margin: 0px;
   padding: 10px;
-  height: 800px;
+  height: 900px;
   text-align: center;
 }
 .new-class-title {
@@ -411,7 +392,6 @@ table {
   height: 900px;
   text-align: center;
 }
-
 .new_vehicle {
   display: inline-block;
   background-color:rgb(12, 138, 201);
@@ -419,24 +399,21 @@ table {
   padding: 10px;
   text-align: left;
 }
-.new_vehicle textarea {
-  width: 350px;
+.edit_vehicle {
+  display: inline-block;
+  background-color:rgb(12, 138, 201);
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
 }
 
-/*
-input:required:invalid, input:focus:invalid {
- background-image: url(/images/invalid.png);
- background-position: right top;
- background-repeat: no-repeat;
- }
-
- input:required:valid {
- background-image: url(/images/valid.png);
- background-position: right top;
- background-repeat: no-repeat;
- 
- }
-*/
+.delete_vehicle {
+  display: inline-block;
+  background-color:rgb(12, 138, 201);
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+}
 
 /******media query******/
 @media only screen and (min-width: 710px) {
@@ -460,13 +437,11 @@ input:required:invalid, input:focus:invalid {
     max-width: 1200px;
     height: auto;
   }
-
   /*******review*******/
   .review {
     height: auto;
     max-width: 750px;
   }
-
   /*******upgrades*******/
   .upgrades {
     height: auto;
@@ -478,7 +453,6 @@ input:required:invalid, input:focus:invalid {
   .register p {
     width: 355px;
   }
-
 }
 
 @media only screen and (min-width: 1010px) {
@@ -509,7 +483,6 @@ input:required:invalid, input:focus:invalid {
     grid-row: 2;
     padding: 20px;
   }
-
   /*******review*******/
   .review {
     height: auto;
@@ -518,7 +491,6 @@ input:required:invalid, input:focus:invalid {
     grid-row: 3;
     padding: 15px;
   }
-
   /*******upgrades*******/
   .upgrades {
     height: auto;

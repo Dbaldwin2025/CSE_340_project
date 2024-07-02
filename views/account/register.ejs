@@ -1,9 +1,7 @@
-
 <% if (title) { %>
 <h1 class="register-title"><%= title %></h1>
 
 <div class="register-page">
-
 
 <% if (errors) { %>
   <ul class="notice">
@@ -13,9 +11,7 @@
  </ul>
 <% } %>
 
-
 <%- register %>
-
 </div>
 
 <% } else {
@@ -23,4 +19,3 @@
   res.redirect('/')
 } %>
 
-<%# message%>

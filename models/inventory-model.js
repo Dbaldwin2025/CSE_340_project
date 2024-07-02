@@ -1,14 +1,14 @@
 const pool2 = require("../database/")
 
 /* ***************************
- *  Get all classification data
+ *  Get all classification data - working
  * ************************** */
 async function getClassifications(){
   return await pool2.query("SELECT * FROM public.classification ORDER BY classification_name")
 }
 
 /* ***************************
- *  Get all inventory items and classification_name by classification_id
+ *  Get all inventory items and classification_name by classification_id - working
  * ************************** */
 async function getInventoryByClassificationId(classification_id) {
   try {
@@ -26,7 +26,7 @@ async function getInventoryByClassificationId(classification_id) {
 }
 
 /* ***************************
- *  Get all vehicle data
+ *  Get all vehicle data - working
  * ************************** */
 async function getInventoryByInvId(inv_id){
   try {
@@ -38,6 +38,9 @@ async function getInventoryByInvId(inv_id){
 }
 }
 
+/* ***************************
+ *  Add new classification data - working
+ * ************************** */
 async function newClassification(classification_name){
   try {
     const sql1 = "INSERT INTO classification (classification_name) VALUES ($1) RETURNING *"
@@ -48,6 +51,9 @@ async function newClassification(classification_name){
   }
 }
 
+/* ***************************
+ *  Add new vehicle data - working
+ * ************************** */
 async function newVehicle(inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id){
   try {
     const sql2 = "INSERT INTO inventory (inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *"
@@ -56,19 +62,9 @@ async function newVehicle(inv_make, inv_model, inv_year, inv_description, inv_im
     return error.message
   }
 }
-/*
-async function updateVehicle(inv_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id){
-  try {
-    const sql3 = "UPDATE inventory (inv_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE inv_id =$1 "
-    return await pool2.query(sql3, [inv_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id])
-  } catch (error) {
-    return error.message
-  }
-}
-  */
 
 /* ***************************
- *  Update Inventory Data
+ *  Update Inventory Data - working
  * ************************** */
 async function updateInventory(
   inv_id,
@@ -104,8 +100,9 @@ async function updateInventory(
     console.error("model error: " + error)
   }
 }
+
 /* ***************************
- *  Update Inventory Data
+ *  Delete Inventory Data - working
  * ************************** */
 async function deleteInventory(inv_id) {
   try {

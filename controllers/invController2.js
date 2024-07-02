@@ -1,8 +1,10 @@
-
-
 const invModel = require("../models/inventory-model")
 const utilities = require("../utilities/")
 
+
+/* ***************************
+ *  Add new classification - working
+ * ************************** */
 async function newClassification (req, res) {
     let nav = await utilities.getNav() 
     
@@ -13,13 +15,11 @@ async function newClassification (req, res) {
     const regResult = await invModel.newClassification (
       classification_name
     )
-  
     if (regResult) {
       req.flash(
         "notice",
         `Congratulations, you added a new classification ${classification_name}.`
       )
-      
       res.status(201).render("./inventory/management", {
         title: "Management",
         nav,
@@ -39,6 +39,10 @@ async function newClassification (req, res) {
       })
     }
   }
+  
+/* ***************************
+ *  Add new vehicle - working
+ * ************************** */
   async function newVehicle(req, res) {
     let nav = await utilities.getNav()
     const managementView = await utilities.buildManagementPage()
@@ -87,6 +91,9 @@ async function newClassification (req, res) {
     }
   }
    
+/* ***************************
+ *  Edit inventory item page - working
+ * ************************** */
   async function editInventoryView(req, res, next) {
     const inv_id = parseInt(req.params.inv_id)
     let nav = await utilities.getNav()
@@ -110,11 +117,12 @@ async function newClassification (req, res) {
       inv_miles: itemData[0].inv_miles,
       inv_color: itemData[0].inv_color,
       classification_id: itemData[0].classification_id
-      
     })
   }
 
-
+/* ***************************
+ *  Build delete item page - working
+ * ************************** */
   async function deleteInventoryView(req, res, next) {
     const inv_id = parseInt(req.params.inv_id)
     let nav = await utilities.getNav()
@@ -138,15 +146,12 @@ async function newClassification (req, res) {
       inv_miles: itemData[0].inv_miles,
       inv_color: itemData[0].inv_color,
       classification_id: itemData[0].classification_id
-      
     })
   }
 
-
 /* ***************************
- *  Update Inventory Data
+ *  Update Inventory Data - working
  * ************************** */
-
 async function updateInventory(req, res, next) {
   let nav = await utilities.getNav()
   const {
@@ -204,10 +209,10 @@ async function updateInventory(req, res, next) {
     })
   }
 }
-/* ***************************
- *  Update Inventory Data
- * ************************** */
 
+/* ***************************
+ *  Delete Inventory Data - working
+ * ************************* */
 async function deleteInventory(req, res, next) {
   let nav = await utilities.getNav()
   const {inv_id} = req.body
@@ -241,7 +246,6 @@ async function deleteInventory(req, res, next) {
     })
   }
 }
-
 
   module.exports = {newClassification, newVehicle, updateInventory, editInventoryView, deleteInventoryView, deleteInventory};
 

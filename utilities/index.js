@@ -1,9 +1,11 @@
 const invModel = require("../models/inventory-model")
 const regModel = require('../models/account-model')
+const jwt = require("jsonwebtoken")
+require("dotenv").config()
 const Util = {}
 
 /* ************************
- * Constructs the nav HTML unordered list
+ * Constructs the nav HTML unordered list - working
  ************************** */
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications()
@@ -26,7 +28,7 @@ Util.getNav = async function (req, res, next) {
 }
 
 /* **************************************
-* Build the classification view HTML
+* Build the classification view HTML - working
 * ************************************ */
 Util.buildClassificationGrid = async function(data){
   let grid
@@ -58,6 +60,9 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the detail view HTML - working
+* ************************************ */
 Util.buildDetailView = async function(data2){
   let detailView 
   if(data2.length > 0){
@@ -73,7 +78,7 @@ Util.buildDetailView = async function(data2){
     + new Intl.NumberFormat('en-US').format(data2[0].inv_price) + '</span>'
     detailView += '<p class="description">' + '<span class="bold1">Descripton: </span>' + data2[0].inv_description + '</p>'
     detailView += '<p class="color">' + '<span class="bold1">Color: </span>' + data2[0].inv_color + '</p>'
-    detailView += '<p class="miles">' + '<span class="bold1">Miles: </span>' + data2[0].inv_miles + '</p>'
+    detailView += '<p class="miles">' + '<span class="bold1">Miles: </span>' + new Intl.NumberFormat('en-US').format(data2[0].inv_miles) + '</p>'
     detailView += '</div>'
     detailView += '</div>'
 } else { 
@@ -82,11 +87,13 @@ Util.buildDetailView = async function(data2){
   return detailView
 }
 
+/* **************************************
+* Build the login view HTML - working
+* ************************************ */
 Util.buildLoginPage = async function() {
 let login
-  if(3>2) {
     login = '<div class="login">'
-    login += '<form>'
+    login += '<form id="loginForm" action="/account/login" method="post">'
 
     login += '<div>'
     login += '<label >Email Address:</label>'
@@ -120,15 +127,34 @@ let login
     login += '</div>'
 
     login += '</div>'
-} else { 
-  login += '<p class="notice">Sorry, no login is not availible.</p>'
-}
+
   return login
 }
 
+/* **************************************
+* Build the account view HTML - NOT working
+* ************************************ */
+Util.buildAccountPage = async function() {
+  let account
+
+      account = '<div class="account">'
+      account += '<form id="account" action="/account" method="post">'
+  
+      account += '<div>'
+      account += '<label >Account Management</label>'
+      account += '</div>'
+  
+      account += '</div>'
+
+    return account
+  }
+
+/* **************************************
+* Build the registration view HTML - working
+* ************************************ */  
 Util.buildRegisterPage = async function() {
   let register
-  if(3>2) {
+
     register = '<div class="register">'
     register += '<form action="/account/register" method="post">'
     
@@ -139,7 +165,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input type="text" title="first name" name="account_firstname" required>'
+    register += '<input type="text" name="account_firstname" id="accountFirstname" required value="">'
     register += '</div>'
 
     register += '<div>'
@@ -147,7 +173,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input type="text" title="last name" name="account_lastname" required>'
+    register += '<input type="text" title="last name" name="account_lastname" required value="">'
     register += '</div>'
 
     register += '<div>'
@@ -155,7 +181,7 @@ Util.buildRegisterPage = async function() {
     register += '</div>'
 
     register += '<div>'
-    register += '<input type="email" title="email address" name="account_email" placeholder="Enter a valid email address"  required>'
+    register += '<input type="email" title="email address" name="account_email" placeholder="Enter a valid email address"  required value="">'
     register += '</div>'
 
 
@@ -178,15 +204,15 @@ Util.buildRegisterPage = async function() {
     register += '</form>'
 
     register += '</div>'
-} else { 
-  register += '<p class="notice">Sorry, registration is not availible.</p>'
-}
+
   return register
 }
-
+/* **************************************
+* Build the management view HTML - working
+* ************************************ */
 Util.buildManagementPage = async function() {
   let management
-  if(3>2) {
+
     management = '<div class="management">'
     management += '<div>'
     management += '<a class="new_classification" href="../../inv/addNewClassification">New Classification</a>'
@@ -195,15 +221,16 @@ Util.buildManagementPage = async function() {
     management += '<a class="new_classification" href="../../inv/addNewInventory">New Vehicle</a>'
     management += '</div>'
     management += '</div>'
-} else { 
-  management += '<p class="notice">Sorry, management is not availible.</p>'
-}
+
   return management
 }
 
+/* **************************************
+* Build the add classification view HTML - working
+* ************************************ */
 Util.buildNewClassification = async function() {
   let addClassification
-  if(3>2) {
+
     addClassification = '<div class="new_classification">'
     addClassification += '<p>FIELD IS REQUIRED</p>'
     addClassification += '<form action="/inv/addNewClassification" method="post">'
@@ -211,15 +238,15 @@ Util.buildNewClassification = async function() {
     addClassification += '<div>'
     addClassification += '<input type="text" name="classification_name" required pattern="^([A-Za-z]+){3,40}$">'
     addClassification += '</div>'
-    addClassification += '<button type="submit" value="submit">Submit</button>'
+    addClassification += '<button class="Btn" type="submit" value="submit">Submit</button>'
     addClassification += '</form>'
     addClassification += '</div>'
-} else { 
-  addClassification += '<p class="notice">Sorry, add classification is not availible.</p>'
-}
+
   return addClassification
 }
-
+/* **************************************
+* Build the classification list view HTML - working
+* ************************************ */
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let classificationList =
@@ -239,9 +266,12 @@ Util.buildClassificationList = async function (classification_id = null) {
   return classificationList
 }
 
+/* **************************************
+* Build the add vehicle view HTML - working
+* ************************************ */
 Util.buildNewVehicle = async function() {
   let addVehicle
-  if(3>2) {
+
     addVehicle = '<div class="new_vehicle">'
     addVehicle += '<p>FIELD IS REQUIRED</p>'
     addVehicle += '<form action="/inv/addNewInventory" method="post">'
@@ -272,7 +302,7 @@ Util.buildNewVehicle = async function() {
     addVehicle += '<label>Description</label>'
     addVehicle += '</div>'
     addVehicle += '<div>'
-    addVehicle += '<textarea title="description" name="inv_description" ></textarea>'
+    addVehicle += '<input title="description" name="inv_description" >'
     addVehicle += '</div>'
 
     addVehicle += '<div>'
@@ -317,17 +347,49 @@ Util.buildNewVehicle = async function() {
     addVehicle += await Util.buildClassificationList()
     addVehicle += '</div>'
 
-    addVehicle += '<input type="submit" value="submit">'
+    addVehicle += '<button class="Btn" type="submit" value="submit">Submit</button>'
     addVehicle += '</form>'
     addVehicle += '</div>'
-} else { 
-  addVehicle += '<p class="notice">Sorry, add vehicle is not availible.</p>'
-}
+
   return addVehicle
 }
 
+/* ****************************************
+* Middleware to check token validity
+**************************************** */
+Util.checkJWTToken = (req, res, next) => {
+  if (req.cookies.jwt) {
+   jwt.verify(
+    req.cookies.jwt,
+    process.env.ACCESS_TOKEN_SECRET,
+    function (err, accountData) {
+     if (err) {
+      req.flash("Please log in")
+      res.clearCookie("jwt")
+      return res.redirect("/account/login")
+     }
+     res.locals.accountData = accountData
+     res.locals.loggedin = 1
+     next()
+    })
+  } else {
+   next()
+  }
+ }
 
-
+/* ****************************************
+ *  Check Login
+ * ************************************ */
+Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+   // let loggeinView = "Logout"
+    next()
+  } else {
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+ }
+ 
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

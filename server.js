@@ -18,9 +18,11 @@ const inventoryModel = require("./models/inventory-model")
 const utilities = require("./utilities/index")
 const accountController = require('./controllers/accountController')
 const accountRoute = require('./routes/accountRoute')
+const validation = require('./utilities/account-validation')
 const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * Middleware
@@ -57,18 +59,15 @@ app.set("layout", "./layouts/layout") // not at views root
 /* ***********************
  * Routes
  *************************/
-
-// Inventory routes
-
 app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 app.use("/account", accountRoute)
-
-
-
-
-app.get("/", utilities.handleErrors(inventoryController.getInventoryJSON))
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
+app.get("/", utilities.handleErrors(validation.checkLoginData, validation.checkRegData, validation.loginRules, validation.registationRules))
+app.get("/", utilities.handleErrors(accountController.accountLogin, accountController.buildLogin, accountController.buildRegister, accountController.registerAccount))
+app.get("/", utilities.handleErrors(inventoryController.getInventoryJSON, utilities.checkJWTToken, utilities.checkLogin, utilities.buildAccountPage))
 app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagement, inventoryController.addVehicle, inventoryController.buildClassification, inventoryController.newClassification, inventoryController.newVehicle))
 app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView,utilities.buildRegisterPage, utilities.buildLoginPage, utilities.getNav, utilities.buildManagementPage, utilities.buildClassificationList, utilities.buildNewVehicle, utilities.buildNewClassification))
 app.post("/", utilities.handleErrors(inventoryController2.newClassification, inventoryController2.newVehicle, inventoryController2.updateInventory, inventoryController2.editInventoryView, inventoryController2.deleteInventory, inventoryController2.deleteInventoryView))

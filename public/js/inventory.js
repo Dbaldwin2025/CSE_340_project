@@ -21,6 +21,7 @@
    console.log('There was a problem: ', error.message) 
   }) 
  })
+ 
 // Build inventory items into HTML table components and inject into DOM 
 function buildInventoryList(data) { 
     let inventoryDisplay = document.getElementById("inventoryDisplay"); 

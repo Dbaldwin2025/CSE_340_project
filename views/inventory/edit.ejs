@@ -1,17 +1,17 @@
 <% if (title) { %>
 <h1 class="vehicle_title"><%= title %></h1>
+
 <div class="notice">
 <%- messages()%>
 </div>
+
 <div class="add-inventory">
-<div class="edit">
+<div class="edit_vehicle">
 <form action="/inv/edit" method="post">
 
+
 <div>
-<label>Inventory Id</label>
-</div>
-<div>
-<input title="Inventory id" type="text" name="inv_id" value="<%- inv_id%>" required>
+<input type="hidden"  title="Inventory id" type="text" name="inv_id" value="<%- inv_id%>" required>
 </div>
 
 <div>
@@ -79,9 +79,6 @@
 </div>
 
 <div>
-<label>Classification Id</label>
-</div>
-<div>
 <input type="hidden" name="classification_id" value="<%- classification_id%>" required>
 </div>
 
@@ -90,14 +87,9 @@
 </form>
 </div>
 
-
 </div>
 
 <% } else {
 
   res.redirect('/')
 } %> 
- 
-<%# message%>
-
-
