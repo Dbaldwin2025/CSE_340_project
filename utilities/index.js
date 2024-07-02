@@ -138,7 +138,6 @@ Util.buildAccountPage = async function() {
   let account
 
       account = '<div class="account">'
-      account += '<form id="account" action="/account" method="post">'
   
       account += '<div>'
       account += '<label >Account Management</label>'
@@ -389,7 +388,7 @@ Util.checkLogin = (req, res, next) => {
     return res.redirect("/account/login")
   }
  }
- 
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

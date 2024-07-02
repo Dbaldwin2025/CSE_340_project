@@ -39,4 +39,5 @@ router.post(
     regValidate.checkLoginData,
     utilities.handleErrors(accountController.accountLogin)
   )
+
 module.exports = router
