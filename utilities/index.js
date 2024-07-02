@@ -354,7 +354,7 @@ Util.buildNewVehicle = async function() {
 }
 
 /* ****************************************
-* Middleware to check token validity
+* Middleware to check token validity - working
 **************************************** */
 Util.checkJWTToken = (req, res, next) => {
   if (req.cookies.jwt) {
@@ -377,7 +377,7 @@ Util.checkJWTToken = (req, res, next) => {
  }
 
 /* ****************************************
- *  Check Login
+ *  Check Login - working
  * ************************************ */
 Util.checkLogin = (req, res, next) => {
   if (res.locals.loggedin) {
