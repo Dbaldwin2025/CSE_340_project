@@ -1,6 +1,7 @@
 const invModel = require("../models/inventory-model")
 const regModel = require('../models/account-model')
 const jwt = require("jsonwebtoken")
+const e = require("connect-flash")
 require("dotenv").config()
 const Util = {}
 
@@ -92,8 +93,9 @@ Util.buildDetailView = async function(data2){
 * ************************************ */
 Util.buildLoginPage = async function() {
 let login
+
     login = '<div class="login">'
-    login += '<form id="loginForm" action="/account/login" method="post">'
+    login += '<form id="loginForm" action="/account/accounts" method="post">'
 
     login += '<div>'
     login += '<label >Email Address:</label>'
@@ -134,17 +136,37 @@ let login
 /* **************************************
 * Build the account view HTML - NOT working
 * ************************************ */
-Util.buildAccountPage = async function() {
+Util.buildAccountPage = async function(accountData) {
+  //let name = accountData.account_name
+  let name = "David"
   let account
+  
+
 
       account = '<div class="account">'
   
       account += '<div>'
-      account += '<label >Account Management</label>'
+      account += '<h2>Welcome ' + name + '</h2>'
       account += '</div>'
   
+      account += '<div>'
+      account += '<h3>You are logged in</h3>'
       account += '</div>'
 
+      account += '<div>'
+      account += '<a href="/account/edit">Edit Account Information</a>'
+      account += '</div>'
+
+      account += '<div>'
+      account += '<h2>Inventory Management</h2>'
+      account += '</div>'
+
+      account += '<div>'
+      account += '<a href="/inv">Manage Inventory</a>'
+      account += '</div>'
+
+      account += '</div>'
+ 
     return account
   }
 
@@ -206,6 +228,69 @@ Util.buildRegisterPage = async function() {
 
   return register
 }
+/* **************************************
+* Build the edit account view HTML 
+* ************************************ */  
+Util.buildEditAccountPage = async function() {
+  let editAccount
+
+    editAccount = '<div class="update">'
+    editAccount += '<form action="/account/edit" method="post">'
+
+    editAccount += '<div>'
+    editAccount += '<label >First name</label>'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<input type="text" name="account_firstname" id="accountFirstname" required value="">'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<label >Last name</label>'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<input type="text" title="last name" name="account_lastname" required value="">'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<label >Email Address:</label>'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<input type="email" title="email address" name="account_email" placeholder="Enter a valid email address"  required value="">'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<button class="Btn" type="Submit value="Submit">Update</button>'  
+    editAccount += '</div>'
+
+    editAccount += '<h2>Update Password</h2>'
+
+    editAccount += '<div>'
+    editAccount += '<p>Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</p>'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<label>Password:</label>'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<input type="password" title="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">'
+    editAccount += '</div>'
+
+    editAccount += '<div>'
+    editAccount += '<button class="Btn" type="Submit value="Submit">Update</button>'  
+    editAccount += '</div>'
+
+    editAccount += '</form>'
+
+    editAccount += '</div>'
+
+  return editAccount
+}
+
+
 /* **************************************
 * Build the management view HTML - working
 * ************************************ */

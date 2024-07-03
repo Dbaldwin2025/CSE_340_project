@@ -7,9 +7,11 @@ const regValidate = require('../utilities/account-validation')
 const baseController = require("../controllers/baseController")
 
 // Routes
-router.get("/account", utilities.handleErrors(baseController.buildHome));
-
 router.get("/login", utilities.handleErrors(accountController.buildLogin, accountController.accountLogin));
+
+router.get("/accounts/:accountId",utilities.handleErrors(accountController.accountTest));
+
+router.get("/edit",utilities.handleErrors(accountController.buildEditAccount));
 
 router.get("/register", utilities.handleErrors(accountController.buildRegister, accountController.registerAccount));
 
@@ -33,11 +35,13 @@ router.post(
   }
 )
  // Process the login attempt -NOT working
+ 
   router.post(
-    "/login",
+    "/accounts/:accountId",
     regValidate.loginRules(),
     regValidate.checkLoginData,
     utilities.handleErrors(accountController.accountLogin)
   )
+    
 
 module.exports = router

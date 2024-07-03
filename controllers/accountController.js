@@ -9,6 +9,8 @@ require("dotenv").config()
 * *************************************** */
 async function buildLogin(req, res, next) {
     let nav = await utilities.getNav()
+    const { account_email, account_password } = req.body
+    const accountData = await accountModel.getAccountByEmail(account_email)
     const login = await utilities.buildLoginPage()
     res.render("account/login", {
       title: "Login",
@@ -47,13 +49,29 @@ async function accountLogin(req, res) {
        res.cookie("jwt", accessToken, { httpOnly: true, secure: true, maxAge: 3600 * 1000 })
      }
       
-   return res.redirect("/account/")
+   return res.redirect("./account/accounts")
 
-  }
+    }
+  
   } catch (error) {
    return new Error('Access Forbidden')
   }
  }
+/* ***************************
+ *  Build account test page  - 
+ * ************************** */
+async function accountTest(req, res, next) {
+  const { account_email, account_password } = req.body
+  const accountData = await accountModel.getAccountByEmail(account_email)
+  const account = await utilities.buildAccountPage(accountData)
+  let nav = await utilities.getNav()
+  res.render("./account/accounts" , {
+    title: "Account Management",
+    nav,
+    account,
+    errors: null,
+  })
+}
 
 
 /* ****************************************
@@ -70,6 +88,19 @@ async function buildRegister(req, res, next) {
   })
 }
 
+/* ****************************************
+*  Deliver edit account view - working
+* *************************************** */
+async function buildEditAccount(req, res, next) {
+  let nav = await utilities.getNav()
+  const editAccount = await utilities.buildEditAccountPage()
+  res.render("account/edit", {
+    title: "Edit Account",
+    nav,
+    editAccount,
+    errors: null,
+  })
+}
 /* ****************************************
 *  Process Registration - working
 * *************************************** */
@@ -118,5 +149,5 @@ try {
   }
 }
 
-module.exports = { buildLogin, accountLogin, buildRegister, registerAccount};
+module.exports = { buildLogin, accountLogin, buildRegister, registerAccount, accountTest, buildEditAccount};
  

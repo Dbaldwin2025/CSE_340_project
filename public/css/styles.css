@@ -348,8 +348,20 @@ form input {
   height: 800px;
   text-align: center;
 }
+.account-page {
+  background-color: white;
+  margin: 0px;
+  padding: 10px;
+  height: 800px;
+  text-align: center;
+}
 table {
   display: inline-block;
+}
+.account-title {
+  background-color: white;
+  margin: 0px;
+  padding: 20px;
 }
 .management-title {
   background-color: white;
@@ -378,6 +390,12 @@ table {
   margin: 0px;
   padding: 20px;
 }
+
+.edit-account-title {
+  background-color: white;
+  margin: 0px;
+  padding: 20px;
+}
 .new_classification {
   display: inline-block;
   background-color:rgb(12, 138, 201);
@@ -386,6 +404,13 @@ table {
   text-align: left;
 }
 .add-inventory {
+  background-color: white;
+  margin: 0px;
+  padding: 10px;
+  height: 900px;
+  text-align: center;
+}
+.edit-account-page {
   background-color: white;
   margin: 0px;
   padding: 10px;
@@ -414,7 +439,13 @@ table {
   padding: 10px;
   text-align: left;
 }
-
+.update {
+  display: inline-block;
+  background-color:rgb(12, 138, 201);
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+}
 /******media query******/
 @media only screen and (min-width: 710px) {
   .detail_page {

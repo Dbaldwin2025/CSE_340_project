@@ -1,0 +1,15 @@
+<% if (title) { %>
+<h1 class="edit-account-title"><%= title %></h1>
+
+<div class="notice">
+<%- messages()%>
+</div>
+
+<div class="edit-account-page">
+<%- editAccount %>
+</div>
+
+<% } else {
+
+  res.redirect('/')
+} %>

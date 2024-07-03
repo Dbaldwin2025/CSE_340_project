@@ -65,11 +65,12 @@ app.use("/inv", inventoryRoute)
 app.use("/account", accountRoute)
 app.use(cookieParser())
 app.use(utilities.checkJWTToken)
+
 app.get("/", utilities.handleErrors(validation.checkLoginData, validation.checkRegData, validation.loginRules, validation.registationRules))
-app.get("/", utilities.handleErrors(accountController.accountLogin, accountController.buildLogin, accountController.buildRegister, accountController.registerAccount))
+app.get("/", utilities.handleErrors(accountController.accountLogin, accountController.buildLogin, accountController.buildRegister, accountController.registerAccount, accountController.accountTest, accountController.buildEditAccount))
 app.get("/", utilities.handleErrors(inventoryController.getInventoryJSON, utilities.checkJWTToken, utilities.checkLogin, utilities.buildAccountPage))
 app.get("/", utilities.handleErrors(inventoryController.buildByClassificationId, inventoryController.buildByInvId, inventoryController.buildTest, inventoryController.buildManagement, inventoryController.addVehicle, inventoryController.buildClassification, inventoryController.newClassification, inventoryController.newVehicle))
-app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView,utilities.buildRegisterPage, utilities.buildLoginPage, utilities.getNav, utilities.buildManagementPage, utilities.buildClassificationList, utilities.buildNewVehicle, utilities.buildNewClassification))
+app.get("/", utilities.handleErrors(utilities.buildClassificationGrid, utilities.buildDetailView,utilities.buildRegisterPage, utilities.buildLoginPage, utilities.getNav, utilities.buildManagementPage, utilities.buildClassificationList, utilities.buildNewVehicle, utilities.buildNewClassification, utilities.buildEditAccountPage))
 app.post("/", utilities.handleErrors(inventoryController2.newClassification, inventoryController2.newVehicle, inventoryController2.updateInventory, inventoryController2.editInventoryView, inventoryController2.deleteInventory, inventoryController2.deleteInventoryView))
 
 // File Not Found Route - must be last route in list
